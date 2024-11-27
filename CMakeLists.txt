@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(ResponsiveDesign VERSION 0.1 LANGUAGES CXX)
+project(QmlSlideShow VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -8,12 +8,12 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-qt_add_executable(appResponsiveDesign
+qt_add_executable(appQmlSlideShow
     main.cpp
 )
 
-qt_add_qml_module(appResponsiveDesign
-    URI ResponsiveDesign
+qt_add_qml_module(appQmlSlideShow
+    URI QmlSlideShow
     VERSION 1.0
     QML_FILES
         Main.qml
@@ -45,39 +45,25 @@ qt_add_qml_module(appResponsiveDesign
 qt_add_resources(RESOURCES application.qrc)
 
 # Include the resources in your target
-#target_sources(appResponsiveDesign PRIVATE ${appResponsiveDesignImages} ${appResponsiveDesignFonts})
-target_sources(appResponsiveDesign PRIVATE ${RESOURCES})
-
-
-# qt_add_resources(appResponsiveDesignImages ""
-#     PREFIX "/images"
-#     FILES
-#         images/rM.jpeg
-# )
-
-# qt_add_resources(appResponsiveDesignFonts ""
-#     PREFIX "/fonts"
-#     FILES
-#         fonts/fontawesome-webfont.ttf
-# )
+target_sources(appQmlSlideShow PRIVATE ${RESOURCES})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(appResponsiveDesign PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appResponsiveDesign
+set_target_properties(appQmlSlideShow PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appQmlSlideShow
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appResponsiveDesign
+target_link_libraries(appQmlSlideShow
     PRIVATE Qt6::Quick
 )
 
 include(GNUInstallDirs)
-install(TARGETS appResponsiveDesign
+install(TARGETS appQmlSlideShow
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

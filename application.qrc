@@ -3,7 +3,6 @@
         <file>images/rM.jpeg</file>
         <file>images/qml2.png</file>
         <file>images/chameleon1.png</file>
-        <file>fonts/fontawesome-webfont.ttf</file>
         <file>fonts/fa-solid-900.ttf</file>
     </qresource>
 </RCC>
