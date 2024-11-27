@@ -14,6 +14,21 @@ Window {
     title: qsTr("rM tech day 2024 - responsive design")
 
     property var tabs: [
+        { url:Qt.resolvedUrl("./pages/Page0.qml"), pageNb:"" },
+        { url:Qt.resolvedUrl("./pages/Page1.qml"), pageNb:"1" },
+        { url:Qt.resolvedUrl("./pages/Page2.qml"), pageNb:"2" },
+        { url:Qt.resolvedUrl("./pages/Page3.qml"), pageNb:"3" },
+        { url:Qt.resolvedUrl("./pages/Page4.qml"), pageNb:"4" },
+        { url:Qt.resolvedUrl("./pages/Page5.qml"), pageNb:"5" },
+        { url:Qt.resolvedUrl("./pages/Page6.qml"), pageNb:"6" },
+        { url:Qt.resolvedUrl("./pages/Page7.qml"), pageNb:"7" },
+        { url:Qt.resolvedUrl("./pages/Page8.qml"), pageNb:"8" },
+        { url:Qt.resolvedUrl("./pages/Page9.qml"), pageNb:"9" },
+        { url:Qt.resolvedUrl("./pages/Page10.qml"), pageNb:"10" },
+        { url:Qt.resolvedUrl("./pages/Page11.qml"), pageNb:"11" },
+        { url:Qt.resolvedUrl("./pages/Page12.qml"), pageNb:"12" },
+        { url:Qt.resolvedUrl("./pages/Page13.qml"), pageNb:"13" },
+        { url:Qt.resolvedUrl("./pages/Page14.qml"), pageNb:"14" },
     ]
 
     function previous() {

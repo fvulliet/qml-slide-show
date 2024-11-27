@@ -24,6 +24,21 @@ qt_add_qml_module(appResponsiveDesign
         components/TextSlide.qml
         components/CodeSlide.qml
         components/Page.qml
+        pages/Page0.qml
+        pages/Page1.qml
+        pages/Page2.qml
+        pages/Page3.qml
+        pages/Page4.qml
+        pages/Page5.qml
+        pages/Page6.qml
+        pages/Page7.qml
+        pages/Page8.qml
+        pages/Page9.qml
+        pages/Page10.qml
+        pages/Page11.qml
+        pages/Page12.qml
+        pages/Page13.qml
+        pages/Page14.qml
 )
 
 # Add the resource file to the project
