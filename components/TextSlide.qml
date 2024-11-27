@@ -18,18 +18,18 @@ Page {
             fill: parent
             margins: 16
         }
-        spacing: isSmallScreen ? 24 : 48
+        spacing: root.isSmallScreen ? 24 : 48
 
         Item {
             id: titleContainer
 
-            width: parent.width; height: titleText.implicitHeight
+            width: parent.width; height: root.isSmallScreen ? 24 : 80
 
             Text {
                 id: titleText
                 font {
                     family: "Helvetica"
-                    pixelSize: isSmallScreen ? 40 : 80
+                    pixelSize: parent.height
                     bold: true
                 }
             }
@@ -54,7 +54,7 @@ Page {
                         Layout.fillWidth: true
                         font {
                             family: "Helvetica"
-                            pixelSize: isSmallScreen ? 24 : 48
+                            pixelSize: root.isSmallScreen ? 24 : 48
                         }
                         wrapMode: Text.WordWrap
                         text: parent.modelData.main
@@ -67,7 +67,7 @@ Page {
                             id: row
                             required property string modelData
 
-                            height: isSmallScreen ? 24 : 48
+                            height: root.isSmallScreen ? 24 : 48
                             spacing: 10
 
                             Item {

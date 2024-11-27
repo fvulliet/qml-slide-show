@@ -13,10 +13,17 @@ Components.CodeSlide {
 
         Rectangle {
             color: "#2CDE85"
-            width: 50
-            height: width
-            anchors.left: container.left
+            width: parent.width/4
+            height: parent.height/4
             anchors.right: container.right
+            anchors.bottom: container.bottom
+        }
+
+        Rectangle {
+            color: Qt.lighter("#2CDE85")
+            width: parent.width/4
+            height: parent.height/4
+            anchors.centerIn: parent
         }
     }
 }

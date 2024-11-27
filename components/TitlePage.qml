@@ -6,6 +6,7 @@ Page {
 
     property alias title: mainTitleText.text
     property alias subTitle: subTitleText.text
+    property alias additional: additionalText.text
     property var images: []
 
     Column {
@@ -19,13 +20,14 @@ Page {
             Item {
                 id: mainTitle
                 width: parent.width
-                height: (parent.height - parent.spacing) / 2
+                height: root.isSmallScreen ? (parent.height - parent.spacing) / 2 :
+                                             (parent.height - 2*parent.spacing) * 2/5
 
                 Text {
                     id: mainTitleText
                     font {
                         family: "Helvetica"
-                        pixelSize: root.isSmallScreen ? 32 : 64
+                        pixelSize: root.isSmallScreen ? 40 : 80
                         bold: true
                     }
                     anchors.fill: parent
@@ -37,7 +39,8 @@ Page {
             Item {
                 id: subTitle
                 width: parent.width
-                height: (parent.height - parent.spacing) / 2
+                height: root.isSmallScreen ? (parent.height - parent.spacing) / 2 :
+                                             (parent.height - 2*parent.spacing) * 2/5
 
                 Text {
                     id: subTitleText
@@ -49,6 +52,26 @@ Page {
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignTop
+                    wrapMode: Text.WordWrap
+                }
+            }
+            Item {
+                id: aditional
+                width: parent.width
+                height: root.isSmallScreen ? 0 : (parent.height - 2*parent.spacing) / 5
+                visible: height > 0
+
+                Text {
+                    id: additionalText
+                    font {
+                        family: "Helvetica"
+                        pixelSize: subTitleText.font.pixelSize
+                        italic: true
+                        bold: true
+                    }
+                    anchors.fill: parent
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
                     wrapMode: Text.WordWrap
                 }
             }

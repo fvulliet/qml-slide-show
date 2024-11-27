@@ -19,18 +19,18 @@ Page {
             fill: parent
             margins: 16
         }
-        spacing: 48
+        spacing: root.isSmallScreen ? 24 : 48
 
         Item {
             id: titleContainer
 
-            width: parent.width; height: titleText.implicitHeight
+            width: parent.width; height: root.isSmallScreen ? 40 : 80
 
             Text {
                 id: titleText
                 font {
                     family: "Helvetica"
-                    pixelSize: 80
+                    pixelSize: parent.height
                     bold: true
                 }
             }
@@ -42,7 +42,9 @@ Page {
             width: parent.width; height: parent.height - titleContainer.height - parent.spacing
 
             Item {
-                height: parent.height; width: (parent.width-parent.spacing)/2
+                height: parent.height
+                width: root.isSmallScreen ? 0 : (parent.width-parent.spacing)/2
+                visible: width > 0
 
                 Text {
                     anchors.fill: parent
@@ -56,7 +58,8 @@ Page {
             }
             Loader  {
                 id: loader
-                height: parent.height; width: (parent.width-parent.spacing)/2
+                height: parent.height
+                width: root.isSmallScreen ? parent.width : (parent.width-parent.spacing)/2
             }
         }
     }

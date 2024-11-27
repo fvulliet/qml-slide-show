@@ -4,14 +4,13 @@ import "../components" as Components
 Components.TextSlide {
     id: root
 
-    title: "Screen and device adaptation"
+    title: "Math"
     contents: [
         {
-            main: "QML provides access to screen and device information through the Qt module (e.g., Qt.platform.os, Screen.pixelDensity, Screen.width, Screen.height)."
+            main: "We can use the javascipt Math module, combined with ternary operator, to shape some parts of the UI."
         },
         {
-            main: "You can use these to adapt the UI for various devices:"
+            main: "for example, using <b>height: Math.min(42, container.height)</b> will ensure the elements fits its container but never more than 42"
         }
-
     ]
 }

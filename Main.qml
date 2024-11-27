@@ -5,7 +5,6 @@ import "./pages" as Pages
 Window {
     id: root
 
-    property bool _isDesktop: true
     property int _currentPage: 0
 
     height: Screen.height * 0.8
@@ -29,6 +28,8 @@ Window {
         { url:Qt.resolvedUrl("./pages/Page12.qml"), pageNb:"12" },
         { url:Qt.resolvedUrl("./pages/Page13.qml"), pageNb:"13" },
         { url:Qt.resolvedUrl("./pages/Page14.qml"), pageNb:"14" },
+        { url:Qt.resolvedUrl("./pages/Page15.qml"), pageNb:"15" },
+        { url:Qt.resolvedUrl("./pages/Page16.qml"), pageNb:"16" },
     ]
 
     function previous() {
@@ -49,7 +50,7 @@ Window {
     Binding {
         target: pageLoader.item
         property: "isSmallScreen"
-        value: !root._isDesktop
+        value: (root.width < Screen.width/3) || (root.height < Screen.height/3)
         when: pageLoader.status === Loader.Ready
     }
 
@@ -64,15 +65,19 @@ Window {
         Column {
             id: mainCol
 
-            width: root._isDesktop ? parent.width : parent.width/4
-            height: root._isDesktop ? parent.height : parent.height*3/4
-            anchors.centerIn: parent
+            anchors.fill: parent
 
             Components.Header {
                 id: header
                 width: parent.width; height: Math.max(24, parent.height/20)
-                onBigger: root._isDesktop = true;
-                onSmaller: root._isDesktop = false;
+                onDesktop: {
+                    root.height = Screen.height * 0.8;
+                    root.width = Screen.width * 0.8;
+                }
+                onSmartphone: {
+                    root.height = Screen.height * 0.6;
+                    root.width = Screen.width * 0.2;
+                }
             }
 
             Components.Body {

@@ -6,8 +6,8 @@ Item {
 
     property color color: "black"
 
-    signal bigger()
-    signal smaller()
+    signal desktop()
+    signal smartphone()
 
     RowLayout {
         height: parent.height - 24
@@ -30,7 +30,7 @@ Item {
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: root.bigger()
+                onClicked: root.desktop()
             }
         }
 
@@ -50,7 +50,7 @@ Item {
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: root.smaller()
+                onClicked: root.smartphone()
             }
         }
     }
