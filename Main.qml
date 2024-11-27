@@ -60,7 +60,7 @@ Window {
         anchors {
             fill: parent
         }
-        color: "black"
+        color: "#2E2E2E" // 2E2E2E 6A737B D0C9C0 F2F2F0
 
         Column {
             id: mainCol
@@ -101,7 +101,7 @@ Window {
                             font.family: webFont.name
                             font.pixelSize: height
                             horizontalAlignment: Text.AlignHCenter
-                            color: "white"
+                            color: "#F2F2F0"
 
                             MouseArea {
                                 anchors.fill: parent
@@ -123,12 +123,13 @@ Window {
                                 margins: 8
                             }
                             radius: 16
+                            color: "#F2F2F0"
 
                             Loader {
                                 id: pageLoader
                                 anchors {
                                     fill: parent
-                                    margins: 0
+                                    margins: 20
                                 }
                                 source: root.tabs[root._currentPage].url
                                 onLoaded: {
@@ -151,7 +152,7 @@ Window {
                             font.family: webFont.name
                             font.pixelSize: height
                             horizontalAlignment: Text.AlignHCenter
-                            color: "white"
+                            color: "#F2F2F0"
 
                             MouseArea {
                                 anchors.fill: parent

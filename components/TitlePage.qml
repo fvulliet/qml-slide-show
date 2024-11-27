@@ -30,6 +30,7 @@ Page {
                         pixelSize: root.isSmallScreen ? 40 : 80
                         bold: true
                     }
+                    color: "#2E2E2E"
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignBottom
@@ -49,6 +50,7 @@ Page {
                         pixelSize: mainTitleText.font.pixelSize/2
                         italic: true
                     }
+                    color: "#2E2E2E"
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignTop
@@ -69,6 +71,7 @@ Page {
                         italic: true
                         bold: true
                     }
+                    color: "#6A737B"
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter

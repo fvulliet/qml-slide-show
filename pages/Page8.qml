@@ -6,10 +6,10 @@ Components.CodeSlide {
     id: root
 
     title: "Anchors"
-    code: "Rectangle {\n\tcolor: \"lightgray\"\n\tGridLayout {\n\t\tcolumns: 3\n\t\tRectangle { color: \"blue\"); }\n\t\tRectangle { color: \"white\"; }\n\t\tRectangle { color: Qt.darker(\"red\"); }\n\t}}"
+    code: "Rectangle {\n\tcolor: \"#D0C9C0\"\n\tGridLayout {\n\t\tcolumns: 3\n\t\tRectangle { color: \"blue\"); }\n\t\tRectangle { color: \"white\"; }\n\t\tRectangle { color: Qt.darker(\"red\"); }\n\t}}"
     dynamicComp: Rectangle {
         id: container
-        color: "lightgray"
+        color: "#D0C9C0"
 
         Rectangle {
             color: "#2CDE85"

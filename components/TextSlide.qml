@@ -32,6 +32,7 @@ Page {
                     pixelSize: parent.height
                     bold: true
                 }
+                color: "#2E2E2E"
             }
         }
 
@@ -58,6 +59,7 @@ Page {
                         }
                         wrapMode: Text.WordWrap
                         text: parent.modelData.main
+                        color: "#6A737B"
                     }
 
                     ListView {
@@ -79,10 +81,11 @@ Page {
                                     text: "\uf043"
                                     font {
                                         family: webFont.name
-                                        pixelSize: isSmallScreen ? 18 : 36
+                                        pixelSize: root.isSmallScreen ? 18 : 36
                                     }
                                     horizontalAlignment: Text.AlignHCenter
                                     verticalAlignment: Text.AlignVCenter
+                                    color: "#6A737B"
                                 }
                             }
 
@@ -93,6 +96,7 @@ Page {
                                     pixelSize: isSmallScreen ? 18 : 36
                                 }
                                 text: row.modelData
+                                color: "#6A737B"
                             }
                         }
                     }

@@ -6,10 +6,10 @@ Components.CodeSlide {
     id: root
 
     title: "Layouts"
-    code: "Rectangle {\n\tcolor: \"lightgray\"\n\RowLayout {\n\t\tRectangle { color: \"blue\"); }\n\t\tRectangle { color: \"white\"; }\n\t\tRectangle { color: \"red\"; }\n\t}}"
+    code: "Rectangle {\n\tcolor: \"#D0C9C0\"\n\RowLayout {\n\t\tRectangle { color: \"blue\"); }\n\t\tRectangle { color: \"white\"; }\n\t\tRectangle { color: \"red\"; }\n\t}}"
     dynamicComp: Rectangle {
         id: ctnr
-        color: "lightgray"
+        color: "#D0C9C0"
 
         RowLayout {
             height: ctnr.height/2

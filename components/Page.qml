@@ -7,7 +7,7 @@ Rectangle {
     property bool isSmallScreen
 
     radius: 10
-    color: "white"
+    color: "#F2F2F0"
 
     Text {
         anchors {

@@ -10,7 +10,7 @@ Components.CodeSlide {
     code: ""
     dynamicComp: Rectangle {
         id: container
-        color: "lightgray"
+        color: "#D0C9C0"
 
         ListView {
             id: list

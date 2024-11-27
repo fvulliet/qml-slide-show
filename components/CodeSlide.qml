@@ -33,6 +33,7 @@ Page {
                     pixelSize: parent.height
                     bold: true
                 }
+                color: "#2E2E2E"
             }
         }
 
@@ -54,6 +55,7 @@ Page {
                         family: "Courier"
                         bold: true
                     }
+                    color: "#6A737B"
                 }
             }
             Loader  {

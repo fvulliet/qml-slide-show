@@ -9,7 +9,7 @@ Components.CodeSlide {
     code: ""
     dynamicComp: Rectangle {
         id: container
-        color: "lightgray"
+        color: "#D0C9C0"
 
         Rectangle {
             color: "#2CDE85"
