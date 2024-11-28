@@ -7,7 +7,7 @@ Components.TextSlide {
     title: "What is responsive design ?"
     contents: [
         {
-            main: "Usually, designers want to preserve and/or master",
+            main: "What do designers/developers usually care about",
             sub: [
                 "The arrangement of the elements (column, row, grid..)",
                 "The own size of the elements (images, texts, borders, frames..)",
@@ -15,7 +15,7 @@ Components.TextSlide {
             ]
         },
         {
-            main: "Whatever",
+            main: "Because of the diversity within",
             sub: [
                 "The size of the screen",
                 "The orientation",

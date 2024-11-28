@@ -74,7 +74,7 @@ Page {
                     color: "#6A737B"
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
+                    verticalAlignment: Text.AlignTop
                     wrapMode: Text.WordWrap
                 }
             }

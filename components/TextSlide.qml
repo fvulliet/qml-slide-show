@@ -7,6 +7,7 @@ Page {
 
     property alias title: titleText.text
     property var contents: []
+    readonly property int _subElementHeight: isSmallScreen ? 20 : 40
 
     FontLoader {
         id: webFont
@@ -36,73 +37,84 @@ Page {
             }
         }
 
-        Item {
-            id: bodyContainer
+        ListView {
+            id: blocsList
+            width: parent.width
+            height: parent.height - titleContainer.height - parent.spacing
+            model: root.contents
+            spacing: root.isSmallScreen ? 10 : 20
+            delegate: Column {
+                id: blocDelegate
 
-            width: parent.width; height: parent.height - titleContainer.height - parent.spacing
+                required property var modelData
+                required property int index
 
-            ListView {
-                id: blocsList
-                anchors.fill: parent
-                model: root.contents
-                delegate: ColumnLayout {
-                    required property var modelData
+                property var subData: modelData.sub
 
-                    width: blocsList.width
-                    spacing: 16
+                width: blocsList.width
+                height: myText.implicitHeight + innerListView.height + spacing
+                spacing: 20
 
-                    Text {
-                        Layout.fillWidth: true
-                        font {
-                            family: "Helvetica"
-                            pixelSize: root.isSmallScreen ? 24 : 48
-                        }
-                        wrapMode: Text.WordWrap
-                        text: parent.modelData.main
-                        color: "#6A737B"
+                Text {
+                    id: myText
+                    width: parent.width
+                    font {
+                        family: "Helvetica"
+                        pixelSize: root.isSmallScreen ? 24 : 48
                     }
+                    wrapMode: Text.WordWrap
+                    text: blocDelegate.modelData.main
+                    color: "#6A737B"
+                }
 
-                    ListView {
-                        Layout.fillWidth: true
-                        model: parent.modelData.sub
-                        delegate: Row {
-                            id: row
-                            required property string modelData
+                ListView {
+                    id: innerListView
+                    width: parent.width - 40
+                    anchors {
+                        left: parent.left
+                        leftMargin: 40
+                    }
+                    height: blocDelegate.subData?.length * root._subElementHeight
+                    model: blocDelegate.subData
+                    spacing: 0
+                    delegate: Row {
+                        id: subContent
 
-                            height: root.isSmallScreen ? 24 : 48
-                            spacing: 10
+                        required property string modelData
 
-                            Item {
-                                height: parent.height
-                                width: height
+                        width: innerListView.width
+                        height: root._subElementHeight
 
-                                Text {
-                                    anchors.fill: parent
-                                    text: "\uf043"
-                                    font {
-                                        family: webFont.name
-                                        pixelSize: root.isSmallScreen ? 18 : 36
-                                    }
-                                    horizontalAlignment: Text.AlignHCenter
-                                    verticalAlignment: Text.AlignVCenter
-                                    color: "#6A737B"
-                                }
-                            }
+                        Item {
+                            height: parent.height
+                            width: height
 
                             Text {
-                                height: parent.height
+                                anchors.fill: parent
+                                text: "\uf042"
                                 font {
-                                    family: "Helvetica"
-                                    pixelSize: isSmallScreen ? 18 : 36
+                                    family: webFont.name
+                                    pixelSize: parent.height*0.8
                                 }
-                                text: row.modelData
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
                                 color: "#6A737B"
                             }
+                        }
+
+                        Text {
+                            height: parent.height
+                            font {
+                                family: "Helvetica"
+                                pixelSize: parent.height*0.8
+                            }
+                            text: subContent.modelData
+                            verticalAlignment: Text.AlignVCenter
+                            color: "#6A737B"
                         }
                     }
                 }
             }
         }
     }
-
 }
