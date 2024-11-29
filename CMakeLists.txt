@@ -44,6 +44,7 @@ qt_add_qml_module(appQmlSlideShow
         pages/Page14.qml
         pages/Page15.qml
         pages/Page16.qml
+        pages/Page99.qml
 )
 
 # Add the resource file to the project

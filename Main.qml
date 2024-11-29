@@ -165,6 +165,7 @@ Window {
                             append(Qt.resolvedUrl("./pages/Page14.qml"))
                             append(Qt.resolvedUrl("./pages/Page15.qml"))
                             append(Qt.resolvedUrl("./pages/Page16.qml"))
+                            append(Qt.resolvedUrl("./pages/Page99.qml"))
                             currentPanelIndex = 0
                         }
                     }
