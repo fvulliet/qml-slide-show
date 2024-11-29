@@ -33,13 +33,17 @@ Window {
     ]
 
     function previous() {
-        if (_currentPage > 0)
+        if (_currentPage > 0) {
+            myTansition.start();
             _currentPage--;
+        }
     }
 
     function next() {
-        if (_currentPage < (root.tabs.length-1))
+        if (_currentPage < (root.tabs.length-1)) {
+            myTansition.start();
             _currentPage++;
+        }
     }
 
     function changeDisplay(h, w) {
@@ -72,6 +76,43 @@ Window {
         property: "isSmallScreen"
         value: (root.width < Screen.width/3) || (root.height < Screen.height/3)
         when: pageLoader.status === Loader.Ready
+    }
+
+    SequentialAnimation {
+        id: myTansition
+
+        ParallelAnimation {
+            PropertyAnimation {
+                alwaysRunToEnd: true
+                target: pageLoader
+                property: "x"
+                from: 0
+                to: -slide.width
+            }
+            // PropertyAnimation {
+            //     alwaysRunToEnd: true
+            //     target: pageLoader
+            //     property: "opacity"
+            //     from: 0.2
+            //     to: 0
+            // }
+        }
+        ParallelAnimation {
+            PropertyAnimation {
+                alwaysRunToEnd: true
+                target: pageLoader
+                property: "x"
+                from: slide.width
+                to: 0
+            }
+            // PropertyAnimation {
+            //     alwaysRunToEnd: true
+            //     target: pageLoader
+            //     property: "opacity"
+            //     from: 0
+            //     to: 1
+            // }
+        }
     }
 
     Rectangle {
@@ -122,9 +163,7 @@ Window {
                 width: parent.width; height: parent.height - header.height - footer.height
 
                 Row {
-                    anchors {
-                        fill: parent
-                    }
+                    anchors.fill: parent
 
                     Item {
                         id: previous
@@ -139,7 +178,7 @@ Window {
                             font.family: webFont.name
                             font.pixelSize: height
                             horizontalAlignment: Text.AlignHCenter
-                            color: "#F2F2F0"
+                            color: "#2CDE85"
 
                             MouseArea {
                                 anchors.fill: parent
@@ -152,27 +191,20 @@ Window {
                         id: slide
 
                         height: parent.height; width: parent.width - previous.width - next.width
-                        color: "#2CDE85"
+                        color: "#F2F2F0"
                         radius: 10
+                        clip: true
 
-                        Rectangle {
-                            anchors {
-                                fill: parent
-                                margins: 8
-                            }
-                            radius: 16
-                            color: "#F2F2F0"
-
-                            Loader {
-                                id: pageLoader
-                                anchors {
-                                    fill: parent
-                                    margins: 20
-                                }
-                                source: root.tabs[root._currentPage].url
-                                onLoaded: {
-                                    item.pageNb = root.tabs[root._currentPage].pageNb;
-                                }
+                        Loader {
+                            id: pageLoader
+                            //anchors.fill: parent
+                            width: parent.width
+                            height: parent.height
+                            x: 0
+                            y: 0
+                            source: root.tabs[root._currentPage].url
+                            onLoaded: {
+                                item.pageNb = root.tabs[root._currentPage].pageNb;
                             }
                         }
                     }
@@ -190,7 +222,7 @@ Window {
                             font.family: webFont.name
                             font.pixelSize: height
                             horizontalAlignment: Text.AlignHCenter
-                            color: "#F2F2F0"
+                            color: "#2CDE85"
 
                             MouseArea {
                                 anchors.fill: parent

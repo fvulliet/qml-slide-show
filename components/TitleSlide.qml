@@ -98,8 +98,8 @@ GradientPage {
                     required property string modelData
                     property double _ratio: 1
                     height: root.isSmallScreen ? (listView.height - ((root.images.length-1) * listView.spacing)) / root.images.length :
-                                                 listView.height * _ratio
-                    width: root.isSmallScreen ? listView.width * _ratio :
+                                                 listView.height
+                    width: root.isSmallScreen ? listView.width :
                                                 (listView.width - ((root.images.length-1) * listView.spacing)) / root.images.length
 
                     Image {
@@ -110,8 +110,7 @@ GradientPage {
                         width: parent.width * _ratio
                         source: delItem.modelData
                         fillMode: Image.PreserveAspectFit
-                        horizontalAlignment: Image.AlignHCenter
-                        verticalAlignment: Image.AlignVCenter
+                        anchors.centerIn: parent
 
                         SequentialAnimation {
                             id: myAnim1
