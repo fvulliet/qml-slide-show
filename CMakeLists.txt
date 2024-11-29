@@ -17,13 +17,14 @@ qt_add_qml_module(appQmlSlideShow
     VERSION 1.0
     QML_FILES
         Main.qml
-        components/Header.qml
         components/Body.qml
-        components/Footer.qml
-        components/TitlePage.qml
-        components/TextSlide.qml
         components/CodeSlide.qml
+        components/Footer.qml
+        components/GradientPage.qml
+        components/Header.qml
         components/Page.qml
+        components/TextSlide.qml
+        components/TitleSlide.qml
         pages/Page0.qml
         pages/Page1.qml
         pages/Page2.qml

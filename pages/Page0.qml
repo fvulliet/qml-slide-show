@@ -1,7 +1,7 @@
 import QtQuick
 import "../components" as Components
 
-Components.TitlePage {
+Components.TitleSlide {
     id: root
 
     title: "Responsive design with QML"

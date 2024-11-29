@@ -42,6 +42,26 @@ Window {
             _currentPage++;
     }
 
+    function changeDisplay(h, w) {
+        root.height = h;
+        root.width = w;
+        // align center
+        root.y = Screen.height / 2 - root.height / 2
+        root.x = Screen.width / 2 - root.width / 2
+    }
+
+    function displayDesktop() {
+        root.changeDisplay(Screen.height * 0.9, Screen.width * 0.9);
+    }
+
+    function displayTablet() {
+        root.changeDisplay(Screen.height * 0.8, Screen.width * 0.5);
+    }
+
+    function displaySmartphone() {
+        root.changeDisplay(Screen.height * 0.8, Screen.width * 0.2);
+    }
+
     FontLoader {
         id: webFont
         source: "qrc:/fonts/fa-solid-900.ttf"
@@ -61,6 +81,29 @@ Window {
             fill: parent
         }
         color: "#2E2E2E" // 2E2E2E 6A737B D0C9C0 F2F2F0
+        focus: true
+
+        Keys.onPressed: (event)=> {
+                            if (event.key == Qt.Key_Left) root.previous();
+                            if (event.key == Qt.Key_Right) root.next();
+                            if (event.key == Qt.Key_Plus) {
+                                root.height = Math.min(root.height * 1.1, Screen.height);
+                                root.width = Math.min(root.width * 1.1, Screen.width);
+                            }
+                            if (event.key == Qt.Key_Minus) {
+                                root.height = Math.max(root.height / 1.1, Screen.height/5);
+                                root.width = Math.max(root.width / 1.1, Screen.width/5);
+                            }
+                            if (event.key == Qt.Key_D) {
+                                root.displayDesktop();
+                            }
+                            if (event.key == Qt.Key_T) {
+                                root.displayTablet();
+                            }
+                            if (event.key == Qt.Key_S) {
+                                root.displaySmartphone();
+                            }
+                        }
 
         Column {
             id: mainCol
@@ -70,14 +113,9 @@ Window {
             Components.Header {
                 id: header
                 width: parent.width; height: Math.max(24, parent.height/20)
-                onDesktop: {
-                    root.height = Screen.height * 0.8;
-                    root.width = Screen.width * 0.8;
-                }
-                onSmartphone: {
-                    root.height = Screen.height * 0.6;
-                    root.width = Screen.width * 0.2;
-                }
+                onDesktop: root.displayDesktop();
+                onTablet: root.displayTablet();
+                onSmartphone: root.displaySmartphone();
             }
 
             Components.Body {
