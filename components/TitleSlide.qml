@@ -10,7 +10,10 @@ GradientPage {
     property var images: []
 
     Column {
-        anchors.fill: parent
+        anchors {
+            fill: parent
+            margins: 16
+        }
 
         Column {
             width: parent.width
@@ -27,7 +30,7 @@ GradientPage {
                     id: mainTitleText
                     font {
                         family: "Helvetica"
-                        pixelSize: root.isSmallScreen ? 40 : 80
+                        pixelSize: root.isSmallScreen ? 40 : 96
                         bold: true
                     }
                     color: "#2E2E2E"

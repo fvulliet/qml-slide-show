@@ -7,7 +7,7 @@ Page {
 
     property alias title: titleText.text
     property var contents: []
-    readonly property int _subElementHeight: isSmallScreen ? 20 : 40
+    readonly property int _subElementHeight: isSmallScreen ? 24 : 40
 
     FontLoader {
         id: webFont
@@ -17,7 +17,7 @@ Page {
     Column {
         anchors {
             fill: parent
-            margins: 16
+            margins: 48
         }
         spacing: root.isSmallScreen ? 24 : 48
 
@@ -84,6 +84,7 @@ Page {
 
                         width: innerListView.width
                         height: root._subElementHeight
+                        spacing: 10
 
                         Item {
                             height: parent.height
@@ -91,7 +92,7 @@ Page {
 
                             Text {
                                 anchors.fill: parent
-                                text: "\uf042"
+                                text: "\u2666"
                                 font {
                                     family: webFont.name
                                     pixelSize: parent.height*0.8

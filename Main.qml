@@ -1,3 +1,4 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import "./components" as Components
 import "./pages" as Pages
@@ -5,44 +6,22 @@ import "./pages" as Pages
 Window {
     id: root
 
-    property int _currentPage: 0
-
     height: Screen.height * 0.8
     width: Screen.width * 0.8
     visible: true
     title: qsTr("rM tech day 2024 - responsive design")
 
-    property var tabs: [
-        { url:Qt.resolvedUrl("./pages/Page0.qml"), pageNb:"" },
-        { url:Qt.resolvedUrl("./pages/Page1.qml"), pageNb:"1" },
-        { url:Qt.resolvedUrl("./pages/Page2.qml"), pageNb:"2" },
-        { url:Qt.resolvedUrl("./pages/Page3.qml"), pageNb:"3" },
-        { url:Qt.resolvedUrl("./pages/Page4.qml"), pageNb:"4" },
-        { url:Qt.resolvedUrl("./pages/Page5.qml"), pageNb:"5" },
-        { url:Qt.resolvedUrl("./pages/Page6.qml"), pageNb:"6" },
-        { url:Qt.resolvedUrl("./pages/Page7.qml"), pageNb:"7" },
-        { url:Qt.resolvedUrl("./pages/Page8.qml"), pageNb:"8" },
-        { url:Qt.resolvedUrl("./pages/Page9.qml"), pageNb:"9" },
-        { url:Qt.resolvedUrl("./pages/Page10.qml"), pageNb:"10" },
-        { url:Qt.resolvedUrl("./pages/Page11.qml"), pageNb:"11" },
-        { url:Qt.resolvedUrl("./pages/Page12.qml"), pageNb:"12" },
-        { url:Qt.resolvedUrl("./pages/Page13.qml"), pageNb:"13" },
-        { url:Qt.resolvedUrl("./pages/Page14.qml"), pageNb:"14" },
-        { url:Qt.resolvedUrl("./pages/Page15.qml"), pageNb:"15" },
-        { url:Qt.resolvedUrl("./pages/Page16.qml"), pageNb:"16" },
-    ]
-
     function previous() {
-        if (_currentPage > 0) {
-            myTansition.start();
-            _currentPage--;
+        carousel.isLeft = true;
+        if (carousel.currentPanelIndex > 0) {
+            carousel.currentPanelIndex--;
         }
     }
 
     function next() {
-        if (_currentPage < (root.tabs.length-1)) {
-            myTansition.start();
-            _currentPage++;
+        carousel.isLeft = false;
+        if (carousel.currentPanelIndex < (carousel.pages.count-1)) {
+            carousel.currentPanelIndex++;
         }
     }
 
@@ -72,46 +51,32 @@ Window {
     }
 
     Binding {
-        target: pageLoader.item
+        target: carousel.currentPanel
         property: "isSmallScreen"
         value: (root.width < Screen.width/3) || (root.height < Screen.height/3)
-        when: pageLoader.status === Loader.Ready
+        //when: pageLoader.status === Loader.Ready
     }
 
-    SequentialAnimation {
-        id: myTansition
+    component Nav: Item {
+        id: nav
 
-        ParallelAnimation {
-            PropertyAnimation {
-                alwaysRunToEnd: true
-                target: pageLoader
-                property: "x"
-                from: 0
-                to: -slide.width
+        property alias show: txt.visible
+        property alias icon: txt.text
+
+        signal clicked()
+
+        Text {
+            id: txt
+            width: parent.width; height: width
+            font.family: webFont.name
+            font.pixelSize: height
+            horizontalAlignment: Text.AlignHCenter
+            color: "#2CDE85"
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: nav.clicked();
             }
-            // PropertyAnimation {
-            //     alwaysRunToEnd: true
-            //     target: pageLoader
-            //     property: "opacity"
-            //     from: 0.2
-            //     to: 0
-            // }
-        }
-        ParallelAnimation {
-            PropertyAnimation {
-                alwaysRunToEnd: true
-                target: pageLoader
-                property: "x"
-                from: slide.width
-                to: 0
-            }
-            // PropertyAnimation {
-            //     alwaysRunToEnd: true
-            //     target: pageLoader
-            //     property: "opacity"
-            //     from: 0
-            //     to: 1
-            // }
         }
     }
 
@@ -165,70 +130,53 @@ Window {
                 Row {
                     anchors.fill: parent
 
-                    Item {
-                        id: previous
-
+                    Nav {
+                        id: navPrevious
+                        show: carousel.currentPanelIndex > 0
+                        icon: "\uf053"
                         width: Math.max(parent.width/20, 48)
                         height: width
                         anchors.verticalCenter: parent.verticalCenter
-
-                        Text {
-                            width: parent.width; height: width
-                            text: "\uf053"
-                            font.family: webFont.name
-                            font.pixelSize: height
-                            horizontalAlignment: Text.AlignHCenter
-                            color: "#2CDE85"
-
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: root.previous();
-                            }
-                        }
+                        onClicked: root.previous()
                     }
 
-                    Rectangle {
-                        id: slide
+                    Components.Carousel {
+                        id: carousel
 
-                        height: parent.height; width: parent.width - previous.width - next.width
+                        height: parent.height; width: parent.width - navPrevious.width - navNext.width
                         color: "#F2F2F0"
                         radius: 10
                         clip: true
-
-                        Loader {
-                            id: pageLoader
-                            //anchors.fill: parent
-                            width: parent.width
-                            height: parent.height
-                            x: 0
-                            y: 0
-                            source: root.tabs[root._currentPage].url
-                            onLoaded: {
-                                item.pageNb = root.tabs[root._currentPage].pageNb;
-                            }
+                        Component.onCompleted: {
+                            append(Qt.resolvedUrl("./pages/Page0.qml"))
+                            append(Qt.resolvedUrl("./pages/Page1.qml"))
+                            append(Qt.resolvedUrl("./pages/Page2.qml"))
+                            append(Qt.resolvedUrl("./pages/Page3.qml"))
+                            append(Qt.resolvedUrl("./pages/Page4.qml"))
+                            append(Qt.resolvedUrl("./pages/Page5.qml"))
+                            append(Qt.resolvedUrl("./pages/Page6.qml"))
+                            append(Qt.resolvedUrl("./pages/Page7.qml"))
+                            append(Qt.resolvedUrl("./pages/Page8.qml"))
+                            append(Qt.resolvedUrl("./pages/Page9.qml"))
+                            append(Qt.resolvedUrl("./pages/Page10.qml"))
+                            append(Qt.resolvedUrl("./pages/Page11.qml"))
+                            append(Qt.resolvedUrl("./pages/Page12.qml"))
+                            append(Qt.resolvedUrl("./pages/Page13.qml"))
+                            append(Qt.resolvedUrl("./pages/Page14.qml"))
+                            append(Qt.resolvedUrl("./pages/Page15.qml"))
+                            append(Qt.resolvedUrl("./pages/Page16.qml"))
+                            currentPanelIndex = 0
                         }
                     }
 
-                    Item {
-                        id: next
-
+                    Nav {
+                        id: navNext
+                        show: carousel.currentPanelIndex < (carousel.pages.count-1)
+                        icon: "\uf054"
                         width: Math.max(parent.width/20, 48)
                         height: width
                         anchors.verticalCenter: parent.verticalCenter
-
-                        Text {
-                            width: parent.width; height: width
-                            text: "\uf054"
-                            font.family: webFont.name
-                            font.pixelSize: height
-                            horizontalAlignment: Text.AlignHCenter
-                            color: "#2CDE85"
-
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: root.next();
-                            }
-                        }
+                        onClicked: root.next()
                     }
                 }
             }

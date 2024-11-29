@@ -12,7 +12,9 @@ Rectangle {
     Text {
         anchors {
             bottom: parent.bottom
+            bottomMargin: 10
             left: parent.left
+            leftMargin: 10
         }
         text: root.pageNb
         font.pixelSize: root.isSmallScreen ? 24 : 48
