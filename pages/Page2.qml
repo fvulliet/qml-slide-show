@@ -7,19 +7,23 @@ Components.TextSlide {
     title: "What is responsive design ?"
     contents: [
         {
-            main: "What do designers/developers usually care about",
+            main: "QML provides convenient tools to handle visual elements' properties",
             sub: [
-                "The arrangement of the elements (column, row, grid..)",
-                "The own size of the elements (images, texts, borders, frames..)",
-                "Both, consistently "
+                "dimensions",
+                "position",
+                "layout (arrangement)",
+                "visibility",
+                "..."
             ]
         },
         {
-            main: "Because of the diversity within",
+            main: "Because we could have multiple",
             sub: [
-                "The size of the screen",
-                "The orientation",
-                "The pixel density"
+                "screen size",
+                "orientation",
+                "pixel density",
+                "accessibility (disabled people)",
+                "..."
             ]
         }
     ]

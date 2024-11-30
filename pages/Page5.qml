@@ -7,10 +7,10 @@ Components.TextSlide {
     title: "Layouts"
     contents: [
         {
-            main: "QML offers a variety of layout managers (like GridLayout, ColumnLayout, and RowLayout) that automatically adjust the placement and size of elements to fit different screen sizes.",
+            main: "Grid, Row, Column.. they can 'automatically' adjust the placement and size of elements to fit",
         },
         {
-            main: "The layout will <b>adjust the placement</b> of items based on available space."
-        }
+            main: "this is not black magic and could be tough, there are many parameters to consider !",
+        },
     ]
 }

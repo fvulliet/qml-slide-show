@@ -6,29 +6,42 @@ Components.CodeSlide {
     id: root
 
     title: "Layouts"
-    code: "Rectangle {\n\tcolor: \"#D0C9C0\"\n\RowLayout {\n\t\tRectangle { color: \"blue\"); }\n\t\tRectangle { color: \"white\"; }\n\t\tRectangle { color: \"red\"; }\n\t}}"
+    code: "GridLayout {\n\tid:grid\n\tcolumns: Math.max(1, Math.floor(parent.width / 100))\n\n...(the rest is a bit tough here)\n}"
     dynamicComp: Rectangle {
         id: ctnr
         color: "#D0C9C0"
+        clip: true
 
-        RowLayout {
-            height: ctnr.height/2
-            anchors.centerIn: parent
-            spacing: 0
-            Rectangle {
-                Layout.fillHeight: true
-                Layout.preferredWidth: ctnr.width/3
-                color: "blue"
+        GridLayout {
+            id: grid
+            anchors {
+                fill: parent
+                margins: 10
             }
-            Rectangle {
-                Layout.fillHeight: true
-                Layout.preferredWidth: ctnr.width/3
-                color: "white"
-            }
-            Rectangle {
-                Layout.fillHeight: true
-                Layout.preferredWidth: ctnr.width/3
-                color: "red"
+            columns: Math.max(1, Math.floor(parent.width / 100)) // Adjust columns based on window width
+            rowSpacing: 5
+            columnSpacing: 5
+
+            Repeater {
+                model: 15
+                delegate: Rectangle {
+                    id: del
+                    required property int index
+                    width: 100; height: 100
+                    color: "#2CDE85"
+
+                    Text {
+                        text: del.index + 1
+                        anchors.fill: parent
+                        font {
+                            family: "reMarkableSans-Regular"
+                            pixelSize: height/2
+                            bold: true
+                        }
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
+                }
             }
         }
     }

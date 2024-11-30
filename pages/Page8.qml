@@ -13,17 +13,43 @@ Components.CodeSlide {
 
         Rectangle {
             color: "#2CDE85"
-            width: parent.width/4
-            height: parent.height/4
+            width: parent.width/3
+            height: parent.height/3
             anchors.right: container.right
             anchors.bottom: container.bottom
+
+            Text {
+                anchors.fill: parent
+                font {
+                    family: "reMarkableSans-Regular"
+                    pixelSize: height/3
+                    bold: true
+                }
+                color: "#2E2E2E"
+                text: "bottom\nright"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
             color: Qt.lighter("#2CDE85")
-            width: parent.width/4
-            height: parent.height/4
+            width: parent.width/3
+            height: parent.height/3
             anchors.centerIn: parent
+
+            Text {
+                anchors.fill: parent
+                font {
+                    family: "reMarkableSans-Regular"
+                    pixelSize: height/3
+                    bold: true
+                }
+                color: "#2E2E2E"
+                text: "centered"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
     }
 }

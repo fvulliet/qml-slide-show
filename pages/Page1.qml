@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Layouts
 import "../components" as Components
 
 Components.TextSlide {
@@ -7,10 +8,36 @@ Components.TextSlide {
     title: "What is responsive design ?"
     contents: [
         {
-            main: "An approach to design that ensures a User Interface adjusts and functions well whatever the device and screen size.",
-            sub: [
-                "In QtQuick, responsive design is implemented to adapt user interfaces (UIs) for different screen sizes and device types."
-            ]
+            main: "An approach that ensures a UI adjusts whatever the device and screen size",
+        },
+        {
+            main: "This allows to use <b>the same code</b> regardless of display considerations."
         }
     ]
+
+    GridLayout {
+        width: parent.width
+        height: parent.height/2
+        anchors.bottom: parent.bottom
+        columns: root.isSmallScreen ? 2 : 3
+
+        Image {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            source: "qrc:/images/chameleon1.png"
+            fillMode: Image.PreserveAspectFit
+        }
+        Image {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            source: "qrc:/images/chameleon1.png"
+            fillMode: Image.PreserveAspectFit
+        }
+        Image {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            source: "qrc:/images/chameleon1.png"
+            fillMode: Image.PreserveAspectFit
+        }
+    }
 }

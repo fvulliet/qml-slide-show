@@ -7,10 +7,10 @@ Components.TextSlide {
     title: "xxx"
     contents: [
         {
-            main: "xxx."
+            main: "of course, most of the components come with properties that deal with responsiveness"
         },
         {
-            main: "xxx"
+            main: "before you become a talented wizard, you need to practice a lot"
         }
 
     ]

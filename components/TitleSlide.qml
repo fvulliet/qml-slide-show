@@ -29,7 +29,7 @@ GradientPage {
                 Text {
                     id: mainTitleText
                     font {
-                        family: "Helvetica"
+                        family: "reMarkableSans-Regular"
                         pixelSize: root.isSmallScreen ? 40 : 96
                         bold: true
                     }
@@ -49,7 +49,7 @@ GradientPage {
                 Text {
                     id: subTitleText
                     font {
-                        family: "Helvetica"
+                        family: "reMarkableSans-Regular"
                         pixelSize: mainTitleText.font.pixelSize/2
                         italic: true
                     }
@@ -69,7 +69,7 @@ GradientPage {
                 Text {
                     id: additionalText
                     font {
-                        family: "Helvetica"
+                        family: "reMarkableSans-Regular"
                         pixelSize: subTitleText.font.pixelSize
                         italic: true
                         bold: true
