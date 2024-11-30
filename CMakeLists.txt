@@ -21,10 +21,10 @@ qt_add_qml_module(appQmlSlideShow
         components/Carousel.qml
         components/CodeSlide.qml
         components/Footer.qml
-        components/GradientPage.qml
+        components/GradientSlide.qml
         components/Header.qml
-        components/Page.qml
         components/PageLoader.qml
+        components/Slide.qml
         components/TextSlide.qml
         components/TitleSlide.qml
         pages/Page0.qml

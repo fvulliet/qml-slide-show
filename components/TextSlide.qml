@@ -2,7 +2,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 
-Page {
+Slide {
     id: root
 
     property alias title: titleText.text

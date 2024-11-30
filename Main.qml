@@ -54,7 +54,6 @@ Window {
         target: carousel.currentPanel
         property: "isSmallScreen"
         value: (root.width < Screen.width/3) || (root.height < Screen.height/3)
-        //when: pageLoader.status === Loader.Ready
     }
 
     component Nav: Item {

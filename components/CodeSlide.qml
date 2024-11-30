@@ -2,7 +2,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 
-Page {
+Slide {
     id: root
 
     property alias title: titleText.text
@@ -48,7 +48,7 @@ Page {
                     anchors.fill: parent
                     text: root.code
                     font {
-                        pixelSize: 36
+                        pixelSize: 28
                         family: "Courier"
                         bold: true
                     }

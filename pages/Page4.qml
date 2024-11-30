@@ -5,7 +5,16 @@ Components.CodeSlide {
     id: root
 
     title: "Declarative syntax & bindings"
-    code: "Rectangle {\n\tid: container\n\tcolor: \"gray\"\n\tRectangle {\n\t\tcolor: \"green\"\n\t\twidth: container.width/4\n\t\theight: container.height/2\n\t}\n}"
+    code:
+    `Rectangle {
+        color: "gray"
+
+        Rectangle {
+            color: "green"
+            width: container.width/4
+            height: container.height/2
+        }
+    }`
     dynamicComp: Rectangle {
         id: container
         color: "#D0C9C0"

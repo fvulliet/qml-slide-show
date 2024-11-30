@@ -1,6 +1,6 @@
 import QtQuick
 
-Page {
+Slide {
     id: root
 
     property color color1: "#6A737B"

@@ -6,7 +6,13 @@ Components.CodeSlide {
     id: root
 
     title: "Layouts"
-    code: "GridLayout {\n\tid:grid\n\tcolumns: Math.max(1, Math.floor(parent.width / 100))\n\n...(the rest is a bit tough here)\n}"
+    code:
+    `GridLayout {
+        id: "grid
+        columns: Math.max(1, Math.floor(parent.width / 100))
+        ...
+        (the rest is a bit tough here)
+    }`
     dynamicComp: Rectangle {
         id: ctnr
         color: "#D0C9C0"

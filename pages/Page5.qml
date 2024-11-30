@@ -10,7 +10,7 @@ Components.TextSlide {
             main: "Grid, Row, Column.. they can 'automatically' adjust the placement and size of elements to fit",
         },
         {
-            main: "this is not black magic and could be tough, there are many parameters to consider !",
+            main: "This is not black magic and could be tough, there are many parameters to consider !",
         },
     ]
 }

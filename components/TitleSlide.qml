@@ -1,7 +1,7 @@
 pragma ComponentBehavior: Bound
 import QtQuick
 
-GradientPage {
+GradientSlide {
     id: root
 
     property alias title: mainTitleText.text
