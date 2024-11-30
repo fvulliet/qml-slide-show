@@ -6,6 +6,9 @@ import "./pages" as Pages
 Window {
     id: root
 
+    property int _countdown: 300 // s
+    property bool _cheatWithTime: false
+
     height: Screen.height * 0.8
     width: Screen.width * 0.8
     visible: true
@@ -169,6 +172,16 @@ Window {
                             append(Qt.resolvedUrl("./pages/Page99.qml"))
                             currentPanelIndex = 0
                         }
+
+                        onCurrentPanelIndexChanged: {
+                            if (root._cheatWithTime) {
+                                root._countdown += 2;
+                            }
+                            if (carousel.currentPanelIndex === 1) {
+                                root._cheatWithTime = true;
+                                timer.start();
+                            }
+                        }
                     }
 
                     Nav {
@@ -186,6 +199,21 @@ Window {
             Components.Footer {
                 id: footer
                 width: parent.width; height: Math.max(24, parent.height/20)
+                timeTxt: `${Math.floor((root._countdown/60)).toString().padStart(2,'0')}:${(root._countdown%60).toString().padStart(2,'0')}`
+            }
+        }
+    }
+
+    Timer {
+        id: timer
+        interval: 1000
+        running: false
+        repeat: true
+        onTriggered: {
+            if (root._countdown > 0) {
+                root._countdown -= 1;
+            } else {
+                timer.stop() ;
             }
         }
     }
