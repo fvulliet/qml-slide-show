@@ -4,14 +4,14 @@ import "../components" as Components
 Components.TextSlide {
     id: root
 
-    title: "xxx"
+    title: "Dynamic content management"
+    pageNb: 15
     contents: [
         {
-            main: "of course, most of the components come with properties that deal with responsiveness"
-        },
-        {
-            main: "before you become a talented wizard, you need to practice a lot"
+            main: "One can dynamically load or change content depending on the screen size or orientation",
+            sub: [
+                "for example, using a Loader + conditions on the source"
+            ]
         }
-
     ]
 }

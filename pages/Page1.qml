@@ -6,6 +6,7 @@ Components.TextSlide {
     id: root
 
     title: "What is responsive design ?"
+    pageNb: 1
     contents: [
         {
             main: "An approach that ensures a UI adjusts whatever the device and screen size",

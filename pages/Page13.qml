@@ -4,13 +4,16 @@ import "../components" as Components
 Components.TextSlide {
     id: root
 
-    title: "Math"
+    title: "UI-logic"
+    pageNb: 13
     contents: [
         {
-            main: "We can use the javascipt Math module, combined with ternary operator, to shape some parts of the UI."
-        },
-        {
-            main: "for example, using <b>height: Math.min(42, container.height)</b> will ensure the elements fits its container but never more than 42"
+            main: "We can use Javascript and its operators to implement conditional <b>behaviors</b>",
+            sub: [
+                "'Math' module",
+                "ternary operator",
+                "..."
+            ]
         }
     ]
 }

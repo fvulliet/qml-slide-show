@@ -5,6 +5,7 @@ Components.CodeSlide {
     id: root
 
     title: "Declarative syntax & bindings"
+    pageNb: 4
     code:
     `Rectangle {
         color: "gray"

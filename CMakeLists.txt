@@ -23,7 +23,9 @@ qt_add_qml_module(appQmlSlideShow
         components/Footer.qml
         components/GradientSlide.qml
         components/Header.qml
+        components/ImageSlide.qml
         components/PageLoader.qml
+        components/Scrollbar.qml
         components/Slide.qml
         components/TextSlide.qml
         components/TitleSlide.qml
@@ -44,6 +46,8 @@ qt_add_qml_module(appQmlSlideShow
         pages/Page14.qml
         pages/Page15.qml
         pages/Page16.qml
+        pages/Page17.qml
+        pages/Page18.qml
         pages/Page99.qml
 )
 

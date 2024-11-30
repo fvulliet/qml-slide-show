@@ -5,6 +5,7 @@ Components.TextSlide {
     id: root
 
     title: "Declarative syntax & bindings"
+    pageNb: 3
     contents: [
         {
             main: "QML relies on <b>Components</b> that come with a set of properties",

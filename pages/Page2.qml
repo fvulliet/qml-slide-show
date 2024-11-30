@@ -5,6 +5,7 @@ Components.TextSlide {
     id: root
 
     title: "What is responsive design ?"
+    pageNb: 2
     contents: [
         {
             main: "QML provides convenient tools to handle visual elements' properties",

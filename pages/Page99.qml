@@ -9,7 +9,7 @@ Item {
 
         height: parent.height * _ratio
         width: parent.width * _ratio
-        source: "qrc:/images/marsipanpig.jpg"
+        source: "qrc:/images/marsipanpng.png"
         fillMode: Image.PreserveAspectFit
 
         SequentialAnimation {

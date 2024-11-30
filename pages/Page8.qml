@@ -7,6 +7,7 @@ Components.CodeSlide {
     id: root
 
     title: "Anchors"
+    pageNb: 8
     code:
     `Rectangle {
         id: container

@@ -4,13 +4,16 @@ import "../components" as Components
 Components.TextSlide {
     id: root
 
-    title: "Screen and DPI* considerations"
+    title: "Screen and DPI*"
+    pageNb: 11
     contents: [
         {
-            main: "QML components can be made aware of the screen size and pixel density, allowing for more precise adjustments. You can retrieve information like the screen width, height, and DPI using the Screen object.",
-        },
-        {
-            main: "This ensures that the <b>layout adapts</b> based on the device’s screen resolution."
+            main: "Using the <b>Screen</b> object provided by Qt, You can retrieve information like",
+            sub: [
+                "screen's width",
+                "screen's height",
+                "screen's DPI (*Dot Per Inch)"
+            ]
         }
     ]
 }

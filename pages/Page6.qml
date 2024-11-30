@@ -6,6 +6,7 @@ Components.CodeSlide {
     id: root
 
     title: "Layouts"
+    pageNb: 6
     code:
     `GridLayout {
         id: "grid
@@ -36,16 +37,10 @@ Components.CodeSlide {
                     width: 100; height: 100
                     color: "#2CDE85"
 
-                    Text {
-                        text: del.index + 1
+                    Image {
                         anchors.fill: parent
-                        font {
-                            family: "reMarkableSans-Regular"
-                            pixelSize: height/2
-                            bold: true
-                        }
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
+                        source: "qrc:/images/marsipanpng.png"
+                        fillMode: Image.PreserveAspectFit
                     }
                 }
             }

@@ -5,6 +5,7 @@ Components.TextSlide {
     id: root
 
     title: "Layouts"
+    pageNb: 5
     contents: [
         {
             main: "Grid, Row, Column.. they can 'automatically' adjust the placement and size of elements to fit",

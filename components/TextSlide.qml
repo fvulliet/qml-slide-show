@@ -7,7 +7,7 @@ Slide {
 
     property alias title: titleText.text
     property var contents: []
-    readonly property int _subElementHeight: isSmallScreen ? 24 : 40
+    readonly property int _subElementHeight: isSmallScreen ? 32 : 48
 
     FontLoader {
         id: webFont
