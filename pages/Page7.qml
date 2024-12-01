@@ -14,4 +14,6 @@ Components.TextSlide {
             main: "Components <b>stretch</b> without manually managing sizes and positions"
         }
     ]
+    image: "qrc:/images/anchor.png"
+    imageRatio: 1/3
 }

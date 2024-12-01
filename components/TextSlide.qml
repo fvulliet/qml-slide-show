@@ -9,6 +9,8 @@ Slide {
     property alias title: titleText.text
     property var contents: []
     readonly property int _subElementHeight: viewport === 0 ? 32 : 48
+    property alias image: img.source
+    property real imageRatio: 1/5
 
     FontLoader {
         id: webFont
@@ -127,6 +129,19 @@ Slide {
                     }
                 }
             }
+        }
+    }
+
+    Image {
+        id: img
+        height: parent.height * root.imageRatio
+        width: parent.width * root.imageRatio
+        fillMode: Image.PreserveAspectFit
+        anchors {
+            bottom: parent.bottom
+            bottomMargin: root.viewport > 0 ? 20 : 10
+            right: parent.right
+            rightMargin: root.viewport > 0 ? 20 : 10
         }
     }
 }

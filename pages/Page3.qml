@@ -16,11 +16,11 @@ Components.TextSlide {
             ]
         },
         {
-            main: "Bindings allow properties to depend on each other",
+            main: "<b>Bindings</b> allow properties to depend on each other",
             sub: [
-                "this includes sizes, positions..",
                 "this ensures that a component <b>resizes relative</b> to its parent/container"
             ]
         }
     ]
+    image: "qrc:/images/qml2.png"
 }

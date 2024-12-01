@@ -4,11 +4,11 @@ import "../components" as Components
 Components.TextSlide {
     id: root
 
-    title: "What is responsive design ?"
+    title: "QML in a nutshell"
     pageNb: 2
     contents: [
         {
-            main: "QML provides convenient tools to handle visual elements' properties",
+            main: "QML provides convenient <b>tools</b> to handle visual elements' <b>properties</b>",
             sub: [
                 "dimensions",
                 "position",
@@ -18,7 +18,7 @@ Components.TextSlide {
             ]
         },
         {
-            main: "Because we could have multiple",
+            main: "Because of the <b>diversity</b>",
             sub: [
                 "screen size",
                 "orientation",
@@ -28,4 +28,5 @@ Components.TextSlide {
             ]
         }
     ]
+    image: "qrc:/images/qml2.png"
 }

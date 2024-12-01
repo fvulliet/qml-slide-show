@@ -16,4 +16,6 @@ Components.TextSlide {
             ]
         }
     ]
+    image: "qrc:/images/dpi.png"
+    imageRatio: 1/2
 }

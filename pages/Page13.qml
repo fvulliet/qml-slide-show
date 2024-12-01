@@ -8,12 +8,14 @@ Components.TextSlide {
     pageNb: 13
     contents: [
         {
-            main: "We can use Javascript and its operators to implement conditional <b>behaviors</b>",
+            main: "use Javascript and its operators to implement conditional <b>behaviors</b>",
             sub: [
-                "'Math' module",
+                "\"Math\" module",
                 "ternary operator",
                 "..."
             ]
         }
     ]
+    image: "qrc:/images/logic.png"
+    imageRatio: 1/3
 }

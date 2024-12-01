@@ -5,6 +5,10 @@
         <file>images/qml2.png</file>
         <file>images/chameleon1.png</file>
         <file>images/marsipanpng.png</file>
+        <file>images/anchor.png</file>
+        <file>images/layout.png</file>
+        <file>images/dpi.png</file>
+        <file>images/logic.png</file>
         <file>fonts/fa-solid-900.ttf</file>
         <file>fonts/reMarkableSans-Bold.ttf</file>
         <file>fonts/reMarkableSans-BoldItalic.ttf</file>

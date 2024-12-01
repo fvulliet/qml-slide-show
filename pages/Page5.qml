@@ -8,10 +8,12 @@ Components.TextSlide {
     pageNb: 5
     contents: [
         {
-            main: "Grid, Row, Column.. they can 'automatically' adjust the placement and size of elements to fit",
+            main: "Grid, Row, Column.. can 'automatically' adjust the placement and size of elements to fit",
         },
         {
-            main: "This is not black magic and could be tough, there are many parameters to consider !",
+            main: "This could be tough, many parameters must be considered !",
         },
     ]
+    image: "qrc:/images/layout.png"
+    imageRatio: 1/2
 }
