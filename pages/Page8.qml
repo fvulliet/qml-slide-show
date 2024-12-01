@@ -1,6 +1,7 @@
 pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
+import ThemesModule
 import "../components" as Components
 
 Components.CodeSlide {
@@ -26,7 +27,7 @@ Components.CodeSlide {
     }`
     dynamicComp: Rectangle {
         id: container
-        color: "#D0C9C0"
+        color: Themes.style_brightColor
 
         Rectangle {
             id: red
@@ -44,7 +45,7 @@ Components.CodeSlide {
                     pixelSize: height/6
                     bold: true
                 }
-                color: "#2E2E2E"
+                color: Themes.style_darkestColor
                 text: "bottom\nright"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -66,7 +67,7 @@ Components.CodeSlide {
                     pixelSize: height/6
                     bold: true
                 }
-                color: "#2E2E2E"
+                color: Themes.style_darkestColor
                 text: "centered"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -91,7 +92,7 @@ Components.CodeSlide {
                     pixelSize: height/6
                     bold: true
                 }
-                color: "#2E2E2E"
+                color: Themes.style_darkestColor
                 text: "stuck to\nred"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter

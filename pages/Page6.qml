@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import ThemesModule
 import "../components" as Components
 
 Components.CodeSlide {
@@ -16,7 +17,7 @@ Components.CodeSlide {
     }`
     dynamicComp: Rectangle {
         id: ctnr
-        color: "#D0C9C0"
+        color: Themes.style_brightColor
         clip: true
 
         GridLayout {
@@ -35,7 +36,7 @@ Components.CodeSlide {
                     id: del
                     required property int index
                     width: 100; height: 100
-                    color: "#2CDE85"
+                    color: Themes.style_themeColor
 
                     Image {
                         anchors.fill: parent

@@ -1,4 +1,5 @@
 import QtQuick
+import ThemesModule
 import "../components" as Components
 
 Components.CodeSlide {
@@ -18,7 +19,7 @@ Components.CodeSlide {
     }`
     dynamicComp: Rectangle {
         id: container
-        color: "#D0C9C0"
+        color: Themes.style_brightColor
 
         Text {
             anchors {
@@ -30,7 +31,7 @@ Components.CodeSlide {
                 pixelSize: 40
                 bold: true
             }
-            color: "#2E2E2E"
+            color: Themes.style_darkestColor
             text: Math.round(container.width)
             verticalAlignment: Text.AlignBottom
         }
@@ -45,14 +46,14 @@ Components.CodeSlide {
                 pixelSize: 40
                 bold: true
             }
-            color: "#2E2E2E"
+            color: Themes.style_darkestColor
             text: Math.round(container.height)
             horizontalAlignment: Text.AlignRight
         }
 
         Rectangle {
             id: containee
-            color: "#2CDE85"
+            color: Themes.style_themeColor
             width: parent.width/4
             height: parent.height/2
 
@@ -66,7 +67,7 @@ Components.CodeSlide {
                     pixelSize: 40
                     bold: true
                 }
-                color: "#2E2E2E"
+                color: Themes.style_darkestColor
                 text: Math.round(containee.width)
                 verticalAlignment: Text.AlignBottom
             }
@@ -81,7 +82,7 @@ Components.CodeSlide {
                     pixelSize: 40
                     bold: true
                 }
-                color: "#2E2E2E"
+                color: Themes.style_darkestColor
                 text: Math.round(containee.height)
                 rotation: 0
             }

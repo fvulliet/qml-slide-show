@@ -1,12 +1,13 @@
 import QtQuick
+import ThemesModule
 import "../components" as Components
 
 Components.ImageSlide {
     id: root
 
     property color color1: "pink"
-    property color color2: "#2CDE85"
-    property color color3: "#F2F2F0"
+    property color color2: Themes.style_themeColor
+    property color color3: Themes.style_brightestColor
 
     pageNb: 18
     imageSrc: "qrc:/images/chameleon1.png"

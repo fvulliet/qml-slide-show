@@ -1,4 +1,5 @@
 import QtQuick
+import ThemesModule
 
 Rectangle {
     id: root
@@ -7,7 +8,7 @@ Rectangle {
     property bool isSmallScreen
 
     radius: 10
-    color: "#F2F2F0"
+    color: Themes.style_brightestColor
 
     Component.onCompleted: pageNbTxt.opacity = 1
     Text {

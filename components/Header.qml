@@ -1,6 +1,7 @@
 pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
+import ThemesModule
 
 Item {
     id: root
@@ -28,7 +29,7 @@ Item {
             font.pixelSize: height
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: root.currentFormat === displayCmp.format ? "white" : "#2CDE85"
+            color: root.currentFormat === displayCmp.format ? Themes.style_brightestColor : Themes.style_themeColor
         }
 
         MouseArea {

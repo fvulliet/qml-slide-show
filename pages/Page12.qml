@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import ThemesModule
 import "../components" as Components
 
 Components.CodeSlide {
@@ -10,7 +11,7 @@ Components.CodeSlide {
     code:
     `Rectangle {
         id: container
-        color: "#D0C9C0"
+        Themes.style_brightColor
         Rectangle {
             id: green
             width: Screen.width/5
@@ -24,11 +25,11 @@ Components.CodeSlide {
     }`
     dynamicComp: Rectangle {
         id: container
-        color: "#D0C9C0"
+        color: Themes.style_brightColor
 
         Rectangle {
             id: greenRect
-            color: "#2CDE85"
+            color: Themes.style_themeColor
             width: Screen.width/5
             height: Screen.height/5
             anchors.horizontalCenter: parent.horizontalCenter
@@ -52,7 +53,7 @@ Components.CodeSlide {
                             pixelSize: root.isSmallScreen ? 16 : 32
                             bold: true
                         }
-                        color: "#2E2E2E"
+                        color: Themes.style_darkestColor
                         text: "W"
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
@@ -65,7 +66,7 @@ Components.CodeSlide {
                             pixelSize: root.isSmallScreen ? 16 : 32
                             bold: true
                         }
-                        color: "#2E2E2E"
+                        color: Themes.style_darkestColor
                         text: "H"
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
@@ -83,7 +84,7 @@ Components.CodeSlide {
                             pixelSize: root.isSmallScreen ? 16 : 32
                             bold: true
                         }
-                        color: "#2E2E2E"
+                        color: Themes.style_darkestColor
                         text: "Screen"
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignRight
@@ -95,7 +96,7 @@ Components.CodeSlide {
                             family: "reMarkableSans-Regular"
                             pixelSize: root.isSmallScreen ? 16 : 32
                         }
-                        color: "#2E2E2E"
+                        color: Themes.style_darkestColor
                         text: Math.round(Screen.width)
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
@@ -124,7 +125,7 @@ Components.CodeSlide {
                             pixelSize: root.isSmallScreen ? 16 : 32
                             bold: true
                         }
-                        color: "#2E2E2E"
+                        color: Themes.style_darkestColor
                         text: "green"
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignRight
@@ -136,7 +137,7 @@ Components.CodeSlide {
                             family: "reMarkableSans-Regular"
                             pixelSize: root.isSmallScreen ? 16 : 32
                         }
-                        color: "#2E2E2E"
+                        color: Themes.style_darkestColor
                         text: Math.round(greenRect.width)
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
@@ -148,7 +149,7 @@ Components.CodeSlide {
                             family: "reMarkableSans-Regular"
                             pixelSize: root.isSmallScreen ? 16 : 32
                         }
-                        color: "#2E2E2E"
+                        color: Themes.style_darkestColor
                         text: Math.round(greenRect.height)
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter

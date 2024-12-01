@@ -1,10 +1,11 @@
 import QtQuick
+import ThemesModule
 
 Slide {
     id: root
 
-    property color color1: "#6A737B"
-    property color color2: "#FFFFFF"
+    property color color1: Themes.style_darkColor
+    property color color2: Themes.style_brightestColor
 
     gradient: Gradient {
         id: myGradient

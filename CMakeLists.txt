@@ -17,6 +17,7 @@ qt_add_qml_module(appQmlSlideShow
     VERSION 1.0
     QML_FILES
         Main.qml
+        Themes.qml
         components/Body.qml
         components/Carousel.qml
         components/CodeSlide.qml

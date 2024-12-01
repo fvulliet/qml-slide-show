@@ -1,5 +1,6 @@
 pragma ComponentBehavior: Bound
 import QtQuick
+import ThemesModule
 import "./components" as Components
 import "./pages" as Pages
 
@@ -13,6 +14,11 @@ Window {
     width: Screen.width * 0.8
     visible: true
     title: qsTr("rM tech day 2024 - responsive design")
+
+    Component.onCompleted: {
+        // fill the colors of the default theme
+        Themes.setThemeName("theme1")
+    }
 
     function previous() {
         carousel.isLeft = true;
@@ -73,7 +79,7 @@ Window {
             font.family: webFont.name
             font.pixelSize: height
             horizontalAlignment: Text.AlignHCenter
-            color: "#2CDE85"
+            color: Themes.style_themeColor
 
             MouseArea {
                 anchors.fill: parent
@@ -88,30 +94,33 @@ Window {
         anchors {
             fill: parent
         }
-        color: "#2E2E2E" // 2E2E2E 6A737B D0C9C0 F2F2F0
+        color: Themes.style_darkestColor
         focus: true
 
         Keys.onPressed: (event)=> {
-                            if (event.key == Qt.Key_Left) root.previous();
-                            if (event.key == Qt.Key_Right) root.next();
-                            if (event.key == Qt.Key_Plus) {
-                                root.height = Math.min(root.height * 1.1, Screen.height);
-                                root.width = Math.min(root.width * 1.1, Screen.width);
-                            }
-                            if (event.key == Qt.Key_Minus) {
-                                root.height = Math.max(root.height / 1.1, Screen.height/5);
-                                root.width = Math.max(root.width / 1.1, Screen.width/5);
-                            }
-                            if (event.key == Qt.Key_D) {
-                                root.displayDesktop();
-                            }
-                            if (event.key == Qt.Key_T) {
-                                root.displayTablet();
-                            }
-                            if (event.key == Qt.Key_S) {
-                                root.displaySmartphone();
-                            }
-                        }
+            if (event.key == Qt.Key_Left) root.previous();
+            if (event.key == Qt.Key_Right) root.next();
+            if (event.key == Qt.Key_Plus) {
+                root.height = Math.min(root.height * 1.1, Screen.height);
+                root.width = Math.min(root.width * 1.1, Screen.width);
+            }
+            if (event.key == Qt.Key_Minus) {
+                root.height = Math.max(root.height / 1.1, Screen.height/5);
+                root.width = Math.max(root.width / 1.1, Screen.width/5);
+            }
+            if (event.key == Qt.Key_D) { // dekstop
+                root.displayDesktop();
+            }
+            if (event.key == Qt.Key_T) { // tablet
+                root.displayTablet();
+            }
+            if (event.key == Qt.Key_S) { // smartphone
+                root.displaySmartphone();
+            }
+            if (event.key == Qt.Key_C) { // color
+                Themes.toggleTheme();
+            }
+        }
 
         Column {
             id: mainCol
@@ -146,7 +155,7 @@ Window {
                         id: carousel
 
                         height: parent.height; width: parent.width - navPrevious.width - navNext.width
-                        color: "#F2F2F0"
+                        color: Themes.style_brightestColor
                         radius: 10
                         clip: true
                         Component.onCompleted: {

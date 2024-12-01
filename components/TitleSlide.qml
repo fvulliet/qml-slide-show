@@ -1,5 +1,6 @@
 pragma ComponentBehavior: Bound
 import QtQuick
+import ThemesModule
 
 GradientSlide {
     id: root
@@ -33,7 +34,7 @@ GradientSlide {
                         pixelSize: root.isSmallScreen ? 40 : 96
                         bold: true
                     }
-                    color: "#2E2E2E"
+                    color: Themes.style_darkestColor
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignBottom
@@ -53,7 +54,7 @@ GradientSlide {
                         pixelSize: mainTitleText.font.pixelSize/2
                         italic: true
                     }
-                    color: "#2E2E2E"
+                    color: Themes.style_darkestColor
                     anchors.fill: parent
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignTop

@@ -1,4 +1,5 @@
 import QtQuick
+import ThemesModule
 
 Item {
     id: root
@@ -7,7 +8,7 @@ Item {
 
     Text {
         id: time
-        color: "#2CDE85"
+        color: Themes.style_themeColor
         font {
             family: "reMarkableSans-Regular"
             pixelSize: height/2

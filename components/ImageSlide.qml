@@ -84,7 +84,7 @@ Slide {
             bold: true
             italic: true
         }
-        color: "#2E2E2E"
+        color: Themes.style_darkestColor
         text: "\"Am I a responsive dude ?\""
         visible: opacity > 0
         opacity: root._ratio >= 0.9 ? 1 : 0

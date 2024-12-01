@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import ThemesModule
 import "../components" as Components
 
 Components.CodeSlide {
@@ -19,10 +20,10 @@ Components.CodeSlide {
     }`
     dynamicComp: Rectangle {
         id: container
-        color: "#D0C9C0"
+        color: Themes.style_brightColor
 
         Rectangle {
-            color: "#2CDE85"
+            color: Themes.style_themeColor
             height: Math.max(container.height/2, 200) // mini 200
             width: container.width/2 > 300 ? 300 : container.width/2 // maxi 300
 
@@ -37,7 +38,7 @@ Components.CodeSlide {
                         pixelSize: 24
                         bold: true
                     }
-                    color: "#2E2E2E"
+                    color: Themes.style_darkestColor
                     text: "min. height=200"
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
@@ -50,7 +51,7 @@ Components.CodeSlide {
                         pixelSize: 24
                         bold: true
                     }
-                    color: "#2E2E2E"
+                    color: Themes.style_darkestColor
                     text: "max.width=300"
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter

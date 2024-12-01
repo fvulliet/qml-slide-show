@@ -1,6 +1,7 @@
 pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
+import ThemesModule
 import "../components" as Components
 
 Components.CodeSlide {
@@ -11,7 +12,7 @@ Components.CodeSlide {
     code:
     `Rectangle {
         id: container
-        color: "#D0C9C0"
+        Themes.style_brightColor
 
         Loader {
             anchors.fill: parent
@@ -20,7 +21,7 @@ Components.CodeSlide {
     }`
     dynamicComp: Rectangle {
         id: container
-        color: "#D0C9C0"
+        color: Themes.style_brightColor
 
         Loader {
             anchors.fill: parent
@@ -32,7 +33,7 @@ Components.CodeSlide {
         id: greenRect
 
         Rectangle {
-            color: "#2CDE85"
+            color: Themes.style_themeColor
         }
     }
 

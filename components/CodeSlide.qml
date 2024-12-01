@@ -1,6 +1,7 @@
 pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
+import ThemesModule
 
 Slide {
     id: root
@@ -29,7 +30,7 @@ Slide {
                 pixelSize: root.isSmallScreen ? 40 : 80
                 bold: true
             }
-            color: "#2E2E2E"
+            color: Themes.style_darkestColor
             wrapMode: Text.WordWrap
         }
 

@@ -2,6 +2,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import ThemesModule
 import "../components" as Components
 
 Components.CodeSlide {
@@ -28,7 +29,7 @@ Components.CodeSlide {
     }`
     dynamicComp: Rectangle {
         id: container
-        color: "#D0C9C0"
+        color: Themes.style_brightColor
 
         ListView {
             id: list
@@ -45,7 +46,7 @@ Components.CodeSlide {
                 required property string modelData
                 width: list.width
                 height: 100
-                color: "#2CDE85"
+                color: Themes.style_themeColor
 
                 Text {
                     anchors.fill: parent
@@ -54,7 +55,7 @@ Components.CodeSlide {
                     horizontalAlignment: Text.AlignHCenter
                     font.pixelSize: root.isSmallScreen ? 16 : height*3/4
                     font.bold: true
-                    color: "white"
+                    color: Themes.style_brightestColor
                 }
             }
             ScrollBar.vertical: ScrollBar {
