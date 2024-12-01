@@ -8,7 +8,7 @@ Slide {
 
     property alias title: titleText.text
     property var contents: []
-    readonly property int _subElementHeight: isSmallScreen ? 32 : 48
+    readonly property int _subElementHeight: viewport === 0 ? 32 : 48
 
     FontLoader {
         id: webFont
@@ -20,11 +20,11 @@ Slide {
             fill: parent
             margins: 48
         }
-        spacing: root.isSmallScreen ? 24 : 48
+        spacing: root.viewport === 0 ? 24 : 48
 
         Text {
             id: titleText
-            width: parent.width; height: root.isSmallScreen ? 24 : 80
+            width: parent.width; height: root.viewport === 0 ? 24 : 80
             font {
                 family: "reMarkableSans-Regular"
                 pixelSize: height
@@ -38,7 +38,7 @@ Slide {
             width: parent.width
             height: parent.height - titleText.height - parent.spacing
             model: root.contents
-            spacing: root.isSmallScreen ? 10 : 20
+            spacing: root.viewport === 0 ? 10 : 20
             delegate: Column {
                 id: blocDelegate
 
@@ -48,7 +48,7 @@ Slide {
 
                 width: blocsList.width
                 height: myText.implicitHeight + innerListView.height + spacing
-                spacing: root.isSmallScreen ? 10 : 20
+                spacing: root.viewport === 0 ? 10 : 20
 
                 Row {
                     width: parent.width
@@ -57,7 +57,7 @@ Slide {
 
                     Text {
                         id: myIcon
-                        height: root.isSmallScreen ? 24 : 48
+                        height: root.viewport === 0 ? 24 : 48
                         width: height
                         anchors.verticalCenter: myText.verticalCenter
                         text: "\u2666"
@@ -72,7 +72,7 @@ Slide {
                         width: parent.width - myIcon.width - parent.spacing
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 24 : 48
+                            pixelSize: root.viewport === 0 ? 24 : 48
                         }
                         wrapMode: Text.WordWrap
                         text: blocDelegate.modelData.main
@@ -82,10 +82,10 @@ Slide {
 
                 ListView {
                     id: innerListView
-                    width: parent.width - root.isSmallScreen ? 24 : 40
+                    width: parent.width - root.viewport === 0 ? 24 : 40
                     anchors {
                         left: parent.left
-                        leftMargin: root.isSmallScreen ? 24 : 40
+                        leftMargin: root.viewport === 0 ? 24 : 40
                     }
                     height: blocDelegate.subData?.length * root._subElementHeight
                     model: blocDelegate.subData
@@ -101,7 +101,7 @@ Slide {
 
                         Text {
                             id: mySubIcon
-                            height: root.isSmallScreen ? 24 : 48
+                            height: root.viewport === 0 ? 24 : 48
                             width: height
                             anchors.verticalCenter: mySubText.verticalCenter
                             text: "\u2013"

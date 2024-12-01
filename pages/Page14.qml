@@ -29,7 +29,7 @@ Components.CodeSlide {
 
             Column {
                 anchors.fill: parent
-                visible: !root.isSmallScreen
+                visible: root.viewport !== 0
                 Text {
                     width: parent.width
                     height: parent.height/2

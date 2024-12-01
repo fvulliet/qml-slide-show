@@ -38,7 +38,7 @@ Components.CodeSlide {
             anchors.bottom: container.bottom
 
             Text {
-                visible: !root.isSmallScreen
+                visible: root.viewport !== 0
                 anchors.fill: parent
                 font {
                     family: "reMarkableSans-Regular"
@@ -60,7 +60,7 @@ Components.CodeSlide {
             anchors.centerIn: parent
 
             Text {
-                visible: !root.isSmallScreen
+                visible: root.viewport !== 0
                 anchors.fill: parent
                 font {
                     family: "reMarkableSans-Regular"
@@ -85,7 +85,7 @@ Components.CodeSlide {
             }
 
             Text {
-                visible: !root.isSmallScreen
+                visible: root.viewport !== 0
                 anchors.fill: parent
                 font {
                     family: "reMarkableSans-Regular"

@@ -53,7 +53,7 @@ Components.CodeSlide {
                     text: del.modelData
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: root.isSmallScreen ? 16 : height*3/4
+                    font.pixelSize: root.viewport === 0 ? 16 : height*3/4
                     font.bold: true
                     color: Themes.style_brightestColor
                 }

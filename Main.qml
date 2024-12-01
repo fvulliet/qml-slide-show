@@ -61,8 +61,14 @@ Window {
 
     Binding {
         target: carousel.currentPanel
-        property: "isSmallScreen"
-        value: (root.width < Screen.width/3) || (root.height < Screen.height/3)
+        property: "viewport"
+        value: {
+            if ( (root.width < Screen.width/3) || (root.height < Screen.height/3) )
+                return 0;
+            if ( (root.width < Screen.width/1.5) || (root.height < Screen.height/1.5) )
+                return 1;
+            return 2
+        }
     }
 
     component Nav: Item {

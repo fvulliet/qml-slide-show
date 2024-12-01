@@ -5,7 +5,7 @@ Rectangle {
     id: root
 
     property int pageNb: 0
-    property bool isSmallScreen
+    property int viewport
 
     radius: 10
     color: Themes.style_brightestColor
@@ -22,7 +22,7 @@ Rectangle {
         }
         text: root.pageNb
         opacity: 0
-        font.pixelSize: root.isSmallScreen ? 24 : 48
+        font.pixelSize: root.viewport === 0 ? 24 : 48
         Behavior on opacity { NumberAnimation { duration: 2000 } }
     }
 }

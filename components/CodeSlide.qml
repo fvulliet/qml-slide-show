@@ -20,14 +20,14 @@ Slide {
             fill: parent
             margins: 48
         }
-        spacing: root.isSmallScreen ? 40 : 80
+        spacing: root.viewport === 0 ? 40 : 80
 
         Text {
             id: titleText
             width: parent.width
             font {
                 family: "reMarkableSans-Regular"
-                pixelSize: root.isSmallScreen ? 40 : 80
+                pixelSize: root.viewport === 0 ? 40 : 80
                 bold: true
             }
             color: Themes.style_darkestColor
@@ -42,7 +42,7 @@ Slide {
             Item {
                 id: codeItem
                 height: parent.height
-                width: root.isSmallScreen ? 0 : (parent.width-spare.width-parent.spacing)/2
+                width: root.viewport === 0 ? 0 : (parent.width-spare.width-parent.spacing)/2
                 visible: width > 0
 
                 Text {
@@ -61,12 +61,12 @@ Slide {
                 // this allows the measured value to be displayed even if codeItem is not visible
                 id: spare
                 height: parent.height
-                width: root.isSmallScreen ? 40 : 0
+                width: root.viewport === 0 ? 40 : 0
             }
             Loader  {
                 id: loader
                 height: parent.height
-                width: root.isSmallScreen ? parent.width-spare.width : (parent.width-parent.spacing)/2
+                width: root.viewport === 0 ? parent.width-spare.width : (parent.width-parent.spacing)/2
             }
         }
     }

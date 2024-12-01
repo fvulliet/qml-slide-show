@@ -50,7 +50,7 @@ Components.CodeSlide {
                         width: parent.width/3
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 16 : 32
+                            pixelSize: root.viewport === 0 ? 16 : 32
                             bold: true
                         }
                         color: Themes.style_darkestColor
@@ -63,7 +63,7 @@ Components.CodeSlide {
                         width: parent.width/3
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 16 : 32
+                            pixelSize: root.viewport === 0 ? 16 : 32
                             bold: true
                         }
                         color: Themes.style_darkestColor
@@ -81,7 +81,7 @@ Components.CodeSlide {
                         width: parent.width/3
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 16 : 32
+                            pixelSize: root.viewport === 0 ? 16 : 32
                             bold: true
                         }
                         color: Themes.style_darkestColor
@@ -94,7 +94,7 @@ Components.CodeSlide {
                         width: parent.width/3
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 16 : 32
+                            pixelSize: root.viewport === 0 ? 16 : 32
                         }
                         color: Themes.style_darkestColor
                         text: Math.round(Screen.width)
@@ -106,7 +106,7 @@ Components.CodeSlide {
                         width: parent.width/3
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 16 : 32
+                            pixelSize: root.viewport === 0 ? 16 : 32
                         }
                         text: Math.round(Screen.height)
                         verticalAlignment: Text.AlignVCenter
@@ -122,7 +122,7 @@ Components.CodeSlide {
                         width: parent.width/3
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 16 : 32
+                            pixelSize: root.viewport === 0 ? 16 : 32
                             bold: true
                         }
                         color: Themes.style_darkestColor
@@ -135,7 +135,7 @@ Components.CodeSlide {
                         width: parent.width/3
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 16 : 32
+                            pixelSize: root.viewport === 0 ? 16 : 32
                         }
                         color: Themes.style_darkestColor
                         text: Math.round(greenRect.width)
@@ -147,7 +147,7 @@ Components.CodeSlide {
                         width: parent.width/3
                         font {
                             family: "reMarkableSans-Regular"
-                            pixelSize: root.isSmallScreen ? 16 : 32
+                            pixelSize: root.viewport === 0 ? 16 : 32
                         }
                         color: Themes.style_darkestColor
                         text: Math.round(greenRect.height)
@@ -169,7 +169,7 @@ Components.CodeSlide {
                 anchors.fill: parent
                 font {
                     family: "reMarkableSans-Regular"
-                    pixelSize: root.isSmallScreen ? 16 : 32
+                    pixelSize: root.viewport === 0 ? 16 : 32
                 }
                 text: "gray/5"
                 verticalAlignment: Text.AlignVCenter

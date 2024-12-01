@@ -80,7 +80,7 @@ Slide {
         }
         font {
             family: "reMarkableSans-Regular"
-            pixelSize: root.isSmallScreen ? 48 : 96
+            pixelSize: root.viewport === 0 ? 48 : 96
             bold: true
             italic: true
         }

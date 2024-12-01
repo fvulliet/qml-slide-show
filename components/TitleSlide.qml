@@ -24,14 +24,20 @@ GradientSlide {
             Item {
                 id: mainTitle
                 width: parent.width
-                height: root.isSmallScreen ? (parent.height - parent.spacing) / 2 :
+                height: root.viewport === 0 ? (parent.height - parent.spacing) / 2 :
                                              (parent.height - 2*parent.spacing) * 2/5
 
                 Text {
                     id: mainTitleText
                     font {
                         family: "reMarkableSans-Regular"
-                        pixelSize: root.isSmallScreen ? 40 : 96
+                        pixelSize: {
+                            if (root.viewport === 0)
+                                return 40;
+                            if (root.viewport === 1)
+                                return 64;
+                            return 104;
+                        }
                         bold: true
                     }
                     color: Themes.style_darkestColor
@@ -44,7 +50,7 @@ GradientSlide {
             Item {
                 id: subTitle
                 width: parent.width
-                height: root.isSmallScreen ? (parent.height - parent.spacing) / 2 :
+                height: root.viewport === 0 ? (parent.height - parent.spacing) / 2 :
                                              (parent.height - 2*parent.spacing) * 2/5
 
                 Text {
@@ -64,7 +70,7 @@ GradientSlide {
             Item {
                 id: aditional
                 width: parent.width
-                height: root.isSmallScreen ? 0 : (parent.height - 2*parent.spacing) / 5
+                height: root.viewport === 0 ? 0 : (parent.height - 2*parent.spacing) / 5
                 visible: height > 0
 
                 Text {
@@ -94,16 +100,22 @@ GradientSlide {
                     margins: 10
                 }
                 model: root.images
-                orientation: root.isSmallScreen ? Qt.Vertical : Qt.Horizontal
+                orientation: root.viewport === 0 ? Qt.Vertical : Qt.Horizontal
                 layoutDirection: Qt.LeftToRight
-                spacing: root.isSmallScreen ? 24 : 48
+                spacing: {
+                    if (root.viewport === 0)
+                        return 24;
+                    if (root.viewport === 1)
+                        return 36;
+                    return 48;
+                }
                 delegate: Item {
                     id: delItem
                     required property string modelData
                     property double _ratio: 1
-                    height: root.isSmallScreen ? (listView.height - ((root.images.length-1) * listView.spacing)) / root.images.length :
+                    height: root.viewport === 0 ? (listView.height - ((root.images.length-1) * listView.spacing)) / root.images.length :
                                                  listView.height
-                    width: root.isSmallScreen ? listView.width :
+                    width: root.viewport === 0 ? listView.width :
                                                 (listView.width - ((root.images.length-1) * listView.spacing)) / root.images.length
 
                     Image {
@@ -119,7 +131,7 @@ GradientSlide {
                         SequentialAnimation {
                             id: myAnim1
 
-                            running: !root.isSmallScreen
+                            running: root.viewport !== 0
                             loops: Animation.Infinite
                             NumberAnimation {
                                 target: delImage
@@ -138,7 +150,7 @@ GradientSlide {
                         SequentialAnimation {
                             id: myAnim2
 
-                            running: root.isSmallScreen
+                            running: root.viewport === 0
                             loops: Animation.Infinite
                             NumberAnimation {
                                 target: delImage

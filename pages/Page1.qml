@@ -20,7 +20,7 @@ Components.TextSlide {
         width: parent.width
         height: parent.height/2
         anchors.bottom: parent.bottom
-        columns: root.isSmallScreen ? 2 : 3
+        columns: root.viewport === 0 ? 2 : 3
 
         Image {
             Layout.fillHeight: true
