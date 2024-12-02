@@ -49,7 +49,7 @@ qt_add_qml_module(appQmlSlideShow
         pages/Page16.qml
         pages/Page17.qml
         pages/Page18.qml
-        pages/Page99.qml
+        pages/Page19.qml
 )
 
 # Add the resource file to the project

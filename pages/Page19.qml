@@ -6,18 +6,20 @@ Components.ImageSlide {
     id: root
 
     property color color1: "pink"
-    property color color2: Themes.style_themeColor
-    property color color3: Themes.style_brightestColor
+    property color color2: "brown"
+    property color color3: "white"
 
-    pageNb: 18
-    imageSrc: "qrc:/images/chameleon1.png"
+    pageNb: 19
+    imageSrc: "qrc:/images/marsipanpng.png"
     animate: true
-    text: "\"Am I a responsive dude ?\""
+    speed: 1000
+    rotate: false
+    imageRatio: 1
 
     gradient: Gradient {
         id: myGradient
         GradientStop { position: 0.0; color: root.color1 }
-        GradientStop { position: 0.33; color: root.color2 }
+        GradientStop { position: 0.5; color: root.color2 }
         GradientStop { position: 1.0; color: root.color3 }
     }
 

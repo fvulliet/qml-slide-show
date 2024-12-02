@@ -1,12 +1,17 @@
 pragma ComponentBehavior: Bound
 import QtQuick
+import ThemesModule
 
 Slide {
     id: root
 
     property string imageSrc
     property bool animate: true
+    property string text
     property double _ratio: 1
+    property int speed: 250
+    property bool rotate: true
+    property real imageRatio: 0.8
 
     SequentialAnimation {
         running: root.animate
@@ -16,57 +21,57 @@ Slide {
                 target: root
                 property: "_ratio"
                 from: 0.5; to: 1
-                easing.type: Easing.OutQuad; duration: 500
+                easing.type: Easing.OutQuad; duration: 2*root.speed
             }
             NumberAnimation {
                 target: img
                 property: "opacity"
                 from: 0; to: 1
-                easing.type: Easing.OutQuad; duration: 500
+                easing.type: Easing.OutQuad; duration: 2*root.speed
             }
         }
         NumberAnimation {
             target: root
             property: "_ratio"
             from: 1; to: 0.9
-            easing.type: Easing.InQuad; duration: 250
+            easing.type: Easing.InQuad; duration: root.speed
         }
         NumberAnimation {
             target: root
             property: "_ratio"
             from: 0.9; to: 1
-            easing.type: Easing.InQuad; duration: 250
+            easing.type: Easing.InQuad; duration: root.speed
         }
         NumberAnimation {
             target: root
             property: "_ratio"
             from: 1; to: 0.9
-            easing.type: Easing.InQuad; duration: 250
+            easing.type: Easing.InQuad; duration: root.speed
         }
         NumberAnimation {
             target: root
             property: "_ratio"
             from: 0.9; to: 1
-            easing.type: Easing.InQuad; duration: 250
+            easing.type: Easing.InQuad; duration: root.speed
         }
         ParallelAnimation {
             NumberAnimation {
                 target: root
                 property: "_ratio"
                 from: 1; to: 0.5
-                easing.type: Easing.InQuad; duration: 1500
+                easing.type: Easing.InQuad; duration: 6*root.speed
             }
             NumberAnimation {
                 target: img
                 property: "opacity"
                 from: 1; to: 0
-                easing.type: Easing.InQuad; duration: 1500
+                easing.type: Easing.InQuad; duration: 6*root.speed
             }
             NumberAnimation {
                 target: img
                 property: "rotation"
-                from: 0; to: 360
-                easing.type: Easing.InQuad; duration: 1500
+                from: 0; to: root.rotate ? 360 : 0
+                easing.type: Easing.InQuad; duration: 6*root.speed
             }
         }
     }
@@ -85,8 +90,8 @@ Slide {
             italic: true
         }
         color: Themes.style_darkestColor
-        text: "\"Am I a responsive dude ?\""
-        visible: opacity > 0
+        text: root.text
+        visible: text.length > 0 && opacity > 0
         opacity: root._ratio >= 0.9 ? 1 : 0
         Behavior on opacity { NumberAnimation {duration:250} }
     }
@@ -94,8 +99,8 @@ Slide {
     Image {
         id: img
 
-        height: root.height * 0.8 * root._ratio
-        width: root.width * 0.8 * root._ratio
+        height: root.height * root.imageRatio * root._ratio
+        width: root.width * root.imageRatio * root._ratio
         source: root.imageSrc
         fillMode: Image.PreserveAspectFit
         anchors {
