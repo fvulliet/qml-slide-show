@@ -17,27 +17,30 @@ Components.TextSlide {
     ]
 
     GridLayout {
-        width: parent.width
-        height: parent.height/2
-        anchors.bottom: parent.bottom
+        width: parent.width - 20
+        height: (parent.height-20)*3/5
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            bottom: parent.bottom
+        }
         columns: root.viewport === 0 ? 2 : 3
 
         Image {
             Layout.fillHeight: true
             Layout.fillWidth: true
-            source: "qrc:/images/chameleon1.png"
+            source: "qrc:/images/narrow.png"
             fillMode: Image.PreserveAspectFit
         }
         Image {
             Layout.fillHeight: true
             Layout.fillWidth: true
-            source: "qrc:/images/chameleon1.png"
+            source: "qrc:/images/medium.png"
             fillMode: Image.PreserveAspectFit
         }
         Image {
             Layout.fillHeight: true
             Layout.fillWidth: true
-            source: "qrc:/images/chameleon1.png"
+            source: "qrc:/images/wide.png"
             fillMode: Image.PreserveAspectFit
         }
     }

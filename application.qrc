@@ -1,6 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>Themes.qml</file>
+        <file>images/narrow.png</file>
+        <file>images/medium.png</file>
+        <file>images/wide.png</file>
         <file>images/rM.jpeg</file>
         <file>images/qml2.png</file>
         <file>images/chameleon1.png</file>
