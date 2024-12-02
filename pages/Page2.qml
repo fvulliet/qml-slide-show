@@ -8,7 +8,7 @@ Components.TextSlide {
     pageNb: 2
     contents: [
         {
-            main: "QML provides convenient <b>tools</b> to handle visual elements' <b>properties</b>",
+            main: "QML provides convenient <b>tools</b> to handle visual components' <b>properties</b>",
             sub: [
                 "dimensions",
                 "position",
@@ -23,7 +23,8 @@ Components.TextSlide {
                 "screen size",
                 "orientation",
                 "pixel density",
-                "accessibility (disabled people)",
+                "fonts",
+                "colors",
                 "..."
             ]
         }

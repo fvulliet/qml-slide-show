@@ -8,7 +8,7 @@ Components.TextSlide {
     pageNb: 13
     contents: [
         {
-            main: "use Javascript and its operators to implement conditional <b>behaviors</b>",
+            main: "use Javascript and its operators to implement UI rules and conditional <b>behaviors</b>",
             sub: [
                 "\"Math\" module",
                 "ternary operator",

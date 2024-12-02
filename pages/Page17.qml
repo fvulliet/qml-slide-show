@@ -4,7 +4,7 @@ import "../components" as Components
 Components.TextSlide {
     id: root
 
-    title: "Best practices"
+    title: "A few best practices"
     pageNb: 17
     contents: [
         {
@@ -15,12 +15,15 @@ Components.TextSlide {
         },
         {
             main: "Leverage anchors and layouts",
+            sub: [
+                "use x and y with extreme care"
+            ]
         },
         {
-            main: "Use Screen size or DPI detection to adjust the UI",
+            main: "Use Screen size or DPI detection to adjust the UI"
         },
         {
-            main: "Trust QML components, they're full of helpful properties !",
+            main: "Trust QML components, they're full of helpful properties !"
         }
     ]
 }

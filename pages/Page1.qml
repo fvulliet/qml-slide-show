@@ -9,7 +9,7 @@ Components.TextSlide {
     pageNb: 1
     contents: [
         {
-            main: "An approach that ensures a UI adjusts whatever the device and screen size",
+            main: "An approach to ensure a UI <b>adjusts</b> whatever the device and screen size",
         },
         {
             main: "This allows to use <b>the same code</b> regardless of display considerations."

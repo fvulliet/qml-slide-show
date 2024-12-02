@@ -8,9 +8,9 @@ Components.TextSlide {
     pageNb: 15
     contents: [
         {
-            main: "One can dynamically load or change content depending on the screen size or orientation",
+            main: "You can dynamically load or change any content depending on the display properties",
             sub: [
-                "for example, using a Loader + conditions on the source"
+                "for example, using a Loader + conditions on its source property"
             ]
         }
     ]

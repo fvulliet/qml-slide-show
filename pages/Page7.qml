@@ -8,10 +8,10 @@ Components.TextSlide {
     pageNb: 7
     contents: [
         {
-            main: "Anchors allow components to be positioned relative to each other or their container",
+            main: "Anchors allow components to be <b>anytime</b> positioned relative to each other or their container",
         },
         {
-            main: "Components <b>stretch</b> without manually managing sizes and positions"
+            main: "So, components <b>stretch</b> without manually managing sizes and positions"
         }
     ]
     image: "qrc:/images/anchor.png"

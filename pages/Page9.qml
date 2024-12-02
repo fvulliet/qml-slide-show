@@ -11,7 +11,7 @@ Components.TextSlide {
             main: "Show a collection of elements in a size-limited container, with the ability to scroll/flick",
         },
         {
-            main: "It also optimizes the memory usage",
+            main: "It also optimizes the memory usage"
         }
     ]
 }
