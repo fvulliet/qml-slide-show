@@ -7,7 +7,7 @@ import "./pages" as Pages
 Window {
     id: root
 
-    property int _countdown: 300 // s
+    property int _countdown: 360 // s
     property bool _cheatWithTime: false
 
     height: Screen.height * 0.8
@@ -139,6 +139,7 @@ Window {
                 onDesktop: root.displayDesktop();
                 onTablet: root.displayTablet();
                 onSmartphone: root.displaySmartphone();
+                onBrush: Themes.toggleTheme();
             }
 
             Components.Body {
@@ -193,7 +194,7 @@ Window {
                                 root._countdown += 2;
                             }
                             if (carousel.currentPanelIndex === 1) {
-                                root._cheatWithTime = true;
+                                //root._cheatWithTime = true;
                                 timer.start();
                             }
                         }
@@ -214,7 +215,11 @@ Window {
             Components.Footer {
                 id: footer
                 width: parent.width; height: Math.max(24, parent.height/20)
-                timeTxt: `${Math.floor((root._countdown/60)).toString().padStart(2,'0')}:${(root._countdown%60).toString().padStart(2,'0')}`
+                timeTxt: {
+                    if (root._countdown === 0)
+                        return "Life's too short..";
+                    return `${Math.floor((root._countdown/60)).toString().padStart(2,'0')}:${(root._countdown%60).toString().padStart(2,'0')}`;
+                }
             }
         }
     }

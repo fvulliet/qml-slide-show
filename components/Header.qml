@@ -14,6 +14,7 @@ Item {
     signal desktop()
     signal tablet()
     signal smartphone()
+    signal brush()
 
     component Display: Item {
         id: displayCmp
@@ -43,6 +44,7 @@ Item {
 
     RowLayout {
         height: parent.height - 24
+        width: parent.width
         anchors.verticalCenter: parent.verticalCenter
         spacing: 0
 
@@ -80,6 +82,18 @@ Item {
                 root.currentFormat = Header.Formats.SMARTPHONE;
                 root.smartphone();
             }
+        }
+
+        Item {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+        }
+
+        Display {
+            Layout.fillHeight: true
+            Layout.preferredWidth: 2*height
+            icon: "\uf1fc"
+            onClicked: root.brush();
         }
     }
 }
