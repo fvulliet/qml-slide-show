@@ -8,9 +8,9 @@ Components.TextSlide {
     pageNb: 15
     contents: [
         {
-            main: "You can dynamically load or change any content depending on the display properties",
+            main: "You can <b>dynamically load</b> or change Components depending on the display properties",
             sub: [
-                "for example, using a Loader + conditions on its source property"
+                "for example, using a <b>Loader</b> + conditions on its source property"
             ]
         }
     ]

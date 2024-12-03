@@ -11,7 +11,7 @@ Components.CodeSlide {
     code:
     `Rectangle {
         id: container
-        Themes.style_brightColor
+
         Rectangle {
             id: green
             width: Screen.width/5
@@ -165,15 +165,32 @@ Components.CodeSlide {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
 
-            Text {
+            Column {
                 anchors.fill: parent
-                font {
-                    family: "reMarkableSans-Regular"
-                    pixelSize: root.viewport === 0 ? 16 : 32
+
+                Text {
+                    width: parent.width
+                    height: parent.height/2
+                    font {
+                        family: "reMarkableSans-Regular"
+                        pixelSize: root.viewport === 0 ? 16 : 32
+                        bold: true
+                    }
+                    text: "gray/5"
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
                 }
-                text: "gray/5"
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
+                Text {
+                    width: parent.width
+                    height: parent.height/2
+                    font {
+                        family: "reMarkableSans-Regular"
+                        pixelSize: root.viewport === 0 ? 16 : 32
+                    }
+                    text: Math.round(parent.width)
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                }
             }
         }
     }

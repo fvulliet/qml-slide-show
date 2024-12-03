@@ -106,12 +106,12 @@ Window {
         Keys.onPressed: (event)=> {
             if (event.key == Qt.Key_Left) root.previous();
             if (event.key == Qt.Key_Right) root.next();
-            if (event.key == Qt.Key_Plus) {
-                root.height = Math.min(root.height * 1.1, Screen.height);
+            if (event.key == Qt.Key_Up) {
+                root.height = Math.min(root.height * 1.01, Screen.height);
                 root.width = Math.min(root.width * 1.1, Screen.width);
             }
-            if (event.key == Qt.Key_Minus) {
-                root.height = Math.max(root.height / 1.1, Screen.height/5);
+            if (event.key == Qt.Key_Down) {
+                root.height = Math.max(root.height / 1.01, Screen.height/5);
                 root.width = Math.max(root.width / 1.1, Screen.width/5);
             }
             if (event.key == Qt.Key_D) { // dekstop

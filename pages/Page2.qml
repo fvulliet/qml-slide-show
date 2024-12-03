@@ -4,28 +4,33 @@ import "../components" as Components
 Components.TextSlide {
     id: root
 
-    title: "QML in a nutshell"
+    title: "QML, in a nutshell"
     pageNb: 2
     contents: [
+        {
+            main: "a programming language, part of <b>Qt framework</b>",
+            sub: [
+                "suitable for UIs",
+                "supports Javascript to bring some logic"
+            ]
+        },
         {
             main: "QML provides convenient <b>tools</b> to handle visual components' <b>properties</b>",
             sub: [
                 "dimensions",
                 "position",
-                "layout (arrangement)",
-                "visibility",
-                "..."
+                "layout",
+                "visibility...",
             ]
         },
         {
-            main: "Because of the <b>diversity</b>",
+            main: "Because of the displays <b>diversity</b>",
             sub: [
                 "screen size",
                 "orientation",
                 "pixel density",
                 "fonts",
-                "colors",
-                "..."
+                "colors...",
             ]
         }
     ]

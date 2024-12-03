@@ -6,6 +6,6 @@ Components.TitleSlide {
 
     title: "Responsive design with QML"
     subTitle: "When our code adapts to its environment.."
-    additional: "rM Tech Day 2024/12/05"
+    additional: "Fred.VULLIET - <b>rM Tech Day 2024/12/05</b>"
     images: ["qrc:/images/chameleon1.png", "qrc:/images/qml2.png"]
 }

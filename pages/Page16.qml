@@ -16,7 +16,7 @@ Components.CodeSlide {
 
         Loader {
             anchors.fill: parent
-            sourceComponent: container.width < 300 ? green : image
+            sourceComponent: container.width < 400 ? green : image
         }
     }`
     dynamicComp: Rectangle {
@@ -25,7 +25,7 @@ Components.CodeSlide {
 
         Loader {
             anchors.fill: parent
-            sourceComponent: container.width < 300 ? greenRect: imageComp
+            sourceComponent: container.width < 400 ? greenRect: imageComp
         }
     }
 

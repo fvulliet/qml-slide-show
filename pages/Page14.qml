@@ -39,7 +39,7 @@ Components.CodeSlide {
                         bold: true
                     }
                     color: Themes.style_darkestColor
-                    text: "min. height=200"
+                    text: "max.width=300"
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -52,7 +52,7 @@ Components.CodeSlide {
                         bold: true
                     }
                     color: Themes.style_darkestColor
-                    text: "max.width=300"
+                    text: "min. height=200"
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }

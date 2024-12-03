@@ -5,7 +5,7 @@ import "../components" as Components
 Components.CodeSlide {
     id: root
 
-    title: "Declarative syntax & bindings"
+    title: "Components, properties & bindings"
     pageNb: 4
     code:
     `Rectangle {
@@ -13,7 +13,7 @@ Components.CodeSlide {
 
         Rectangle {
             color: "green"
-            width: container.width/4
+            width: container.width/3
             height: container.height/2
         }
     }`
@@ -54,7 +54,7 @@ Components.CodeSlide {
         Rectangle {
             id: containee
             color: Themes.style_themeColor
-            width: parent.width/4
+            width: parent.width/3
             height: parent.height/2
 
             Text {
