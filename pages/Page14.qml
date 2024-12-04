@@ -14,7 +14,7 @@ Components.CodeSlide {
 
         Rectangle {
             color: "green"
-            height: Math.max(gray.height/2, 200) // mini 200
+            height: Math.max(gray.height/2, 400) // mini 400
             width: gray.width/2 > 300 ? 300 : gray.width/2 // maxi 300
         }
     }`
@@ -23,9 +23,40 @@ Components.CodeSlide {
         color: Themes.style_brightColor
 
         Rectangle {
+            id: green
             color: Themes.style_themeColor
-            height: Math.max(container.height/2, 200) // mini 200
+            height: Math.max(container.height/2, 400) // mini 400
             width: container.width/2 > 300 ? 300 : container.width/2 // maxi 300
+
+            Text {
+                anchors {
+                    top: parent.top
+                    horizontalCenter: parent.horizontalCenter
+                }
+                font {
+                    family: "reMarkableSans-Regular"
+                    pixelSize: 24
+                    bold: true
+                }
+                color: Themes.style_darkestColor
+                text: Math.round(green.width)
+                verticalAlignment: Text.AlignTop
+            }
+
+            Text {
+                anchors {
+                    left: parent.left
+                    verticalCenter: parent.verticalCenter
+                }
+                font {
+                    family: "reMarkableSans-Regular"
+                    pixelSize: 24
+                    bold: true
+                }
+                color: Themes.style_darkestColor
+                text: Math.round(green.height)
+                horizontalAlignment: Text.AlignLeft
+            }
 
             Column {
                 anchors.fill: parent
@@ -52,7 +83,7 @@ Components.CodeSlide {
                         bold: true
                     }
                     color: Themes.style_darkestColor
-                    text: "min. height=200"
+                    text: "min. height=400"
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }

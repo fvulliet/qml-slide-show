@@ -27,13 +27,30 @@ Components.CodeSlide {
             anchors.fill: parent
             sourceComponent: container.width < 400 ? greenRect: imageComp
         }
+
+        Text {
+            anchors {
+                top: parent.top
+                horizontalCenter: parent.horizontalCenter
+            }
+            font {
+                family: "reMarkableSans-Regular"
+                pixelSize: 24
+                bold: true
+            }
+            color: Themes.style_darkestColor
+            text: Math.round(container.width)
+            verticalAlignment: Text.AlignTop
+        }
     }
 
     Component {
         id: greenRect
 
-        Rectangle {
-            color: Themes.style_themeColor
+        Image {
+            anchors.fill: parent
+            source: "qrc:/images/chameleon1.png"
+            fillMode: Image.PreserveAspectFit
         }
     }
 

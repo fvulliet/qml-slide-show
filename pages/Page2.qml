@@ -24,7 +24,7 @@ Components.TextSlide {
             ]
         },
         {
-            main: "Because of the displays <b>diversity</b>",
+            main: "Why such a tool ? Because of the <b>diversity</b> of",
             sub: [
                 "screen size",
                 "orientation",
