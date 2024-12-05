@@ -7,7 +7,7 @@ import "./pages" as Pages
 Window {
     id: root
 
-    property int _countdown: 360 // s
+    property int _countdown: 300 // s
     property bool _cheatWithTime: false
 
     height: Screen.height * 0.8
